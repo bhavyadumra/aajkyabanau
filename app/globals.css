@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─── */
+:root {
+  --pink-50:  #fff0f6;
+  --pink-100: #ffe0ed;
+  --pink-200: #ffb3d1;
+  --pink-300: #ff80b3;
+  --pink-400: #ff4d94;
+  --pink-500: #ff1a75;
+  --accent:   #e91e8c;
+  --rose-soft: #fce4ec;
+  --bg-page:  #fff8fb;
+  --bg-card:  rgba(255,255,255,0.92);
+  --text-base: #2d1b2e;
+  --text-muted: #9c6b8a;
+  --border-pink: rgba(233,30,140,0.15);
+  --shadow-pink: 0 4px 24px rgba(233,30,140,0.10);
+  --gradient-main: linear-gradient(135deg, #ff6b9d 0%, #ff8c69 50%, #ffb347 100%);
+  --gradient-soft: linear-gradient(135deg, #fff0f6 0%, #fce4ec 100%);
+}
+
+/* ─── Base ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-page);
+  color: var(--text-base);
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Display headings ─── */
+.heading-display {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.heading-display-italic {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Gradient text utility ─── */
+.text-gradient {
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glass card ─── */
+.glass-card {
+  background: var(--bg-card);
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
+  border: 1px solid var(--border-pink);
+  border-radius: 18px;
+  box-shadow: var(--shadow-pink);
+}
+
+/* ─── Gradient button ─── */
+.btn-gradient {
+  background: var(--gradient-main);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 0.65rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(233,30,140,0.30);
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+.btn-gradient:hover {
+  box-shadow: 0 6px 20px rgba(233,30,140,0.45);
+  transform: translateY(-1px);
+}
+.btn-gradient:active { transform: translateY(0); }
+
+/* ─── Floating blobs (decorative) ─── */
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+.blob-1 { width: 500px; height: 500px; background: #ff6b9d; top: -120px; right: -120px; }
+.blob-2 { width: 400px; height: 400px; background: #ffb347; bottom: -100px; left: -100px; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ffb3d1; border-radius: 99px; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Selection ─── */
+::selection { background: #ffb3d1; color: #2d1b2e; }
+
+/* ─── Chip selected state ─── */
+.chip-selected {
+  background: linear-gradient(135deg,#fff0f6,#fce4ec);
+  border: 2px solid #e91e8c !important;
+}
+
+/* ─── Category pill ─── */
+.pill-active {
+  background: var(--gradient-main);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(233,30,140,0.35);
+}
+.pill-inactive {
+  background: #fff;
+  color: #9c6b8a;
+  border: 1px solid #ffb3d1;
+}
+.pill-inactive:hover { background: #fff0f6; }
+
+/* ─── Input focus ─── */
+input:focus {
+  outline: none;
+  border-color: #e91e8c;
+  box-shadow: 0 0 0 3px rgba(233,30,140,0.12);
+}
+
+/* ─── Step circle ─── */
+.step-circle {
+  background: var(--gradient-main);
+  color: #fff;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ─── Animations ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #ffe0ed 25%, #fff0f6 50%, #ffe0ed 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
