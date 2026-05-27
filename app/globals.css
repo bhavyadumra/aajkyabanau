@@ -58,8 +58,8 @@ body {
 /* ─── Glass card ─── */
 .glass-card {
   background: var(--bg-card);
-  /* backdrop-filter: blur(12px); */
-  /* -webkit-backdrop-filter: blur(12px); */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-pink);
   border-radius: 18px;
   box-shadow: var(--shadow-pink);
@@ -85,8 +85,8 @@ body {
 .blob {
   position: fixed;
   border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.12;
+  filter: blur(80px);
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
 }
