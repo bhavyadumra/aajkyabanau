@@ -1,5 +1,5 @@
 export type Difficulty = 'Easy' | 'Medium' | 'Hard';
-export type Language = 'en' | 'hi';
+export type Language = 'en' | 'hi' | 'mr' | 'gu' | 'ta' | 'te' | 'bn';
 
 export interface Ingredient {
   id: string;

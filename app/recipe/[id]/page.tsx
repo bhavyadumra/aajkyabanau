@@ -4,8 +4,10 @@ import { useRouter } from "next/navigation";
 import { use } from "react";
 import { useAppStore } from "@/lib/store";
 import Button from "@/components/ui/Button";
-import { Heart, Clock, ChefHat, ArrowLeft, Flame, Star } from "lucide-react";
+import { Heart, Clock, ChefHat, ArrowLeft, Flame } from "lucide-react";
 import { motion } from "framer-motion";
+import { t } from "@/lib/i18n";
+import type { Language } from "@/types";
 
 // Inline the same sample recipes used in results page
 const SAMPLE_RECIPES = [
@@ -225,14 +227,16 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
   const router = useRouter();
   const toggleFav = useAppStore((s) => s.toggleFavorite);
   const favs = useAppStore((s) => s.favorites);
+  const language = useAppStore((s) => s.language) as Language;
+  const tr = t[language];
   const recipe = SAMPLE_RECIPES.find((r) => r.id === id);
   const isFav = recipe ? favs.includes(recipe.id) : false;
 
   if (!recipe) {
     return (
       <div className="text-center py-20">
-        <p className="text-xl font-medium mb-4">Recipe not found.</p>
-        <Button onClick={() => router.back()}>← Go Back</Button>
+        <p className="text-xl font-medium mb-4">{tr.recipeNotFound}</p>
+        <Button onClick={() => router.back()}>← {tr.backBtn}</Button>
       </div>
     );
   }
@@ -275,7 +279,7 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
               cursor: "pointer", transition: "background 0.2s",
             }}
           >
-            <ArrowLeft size={14} /> Back
+            <ArrowLeft size={14} /> {tr.backBtn}
           </button>
 
           {/* Veg / Non-Veg dot */}
@@ -286,7 +290,7 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
             borderRadius: "999px", padding: "5px 12px",
             color: "#fff", fontSize: "12px", fontWeight: 700,
           }}>
-            {recipe.isVeg ? "🌱 Veg" : "🍗 Non-Veg"}
+            {recipe.isVeg ? `🌱 ${tr.recipeVeg}` : `🍗 ${tr.recipeNonVeg}`}
           </div>
 
           {/* Title area */}
@@ -351,7 +355,7 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
         }}>
           <span style={{ fontSize: "18px" }}>{diff.icon}</span>
           <span style={{ fontSize: "11px", fontWeight: 700, color: diff.color, letterSpacing: "0.05em" }}>
-            {recipe.difficulty}
+            {{ Easy: tr.diffEasy, Medium: tr.diffMedium, Hard: tr.diffHard }[recipe.difficulty] ?? diff.label}
           </span>
         </div>
 
@@ -397,7 +401,7 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
           <Heart size={18} color={isFav ? "#e91e8c" : "#9ca3af"}
             fill={isFav ? "#e91e8c" : "none"} />
           <span style={{ fontSize: "11px", fontWeight: 700, color: isFav ? "#e91e8c" : "#6b7280" }}>
-            {isFav ? "Saved" : "Save"}
+            {isFav ? tr.recipeSaved : tr.recipeSave}
           </span>
         </button>
       </motion.div>
@@ -420,12 +424,12 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
             clipPath: "polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%)",
             borderRadius: "8px 0 0 8px",
           }}>
-            🛒 Ingredients
+            🛒 {tr.recipeIngTitle}
             <span style={{
               background: "rgba(255,255,255,0.3)", borderRadius: "999px",
               padding: "1px 8px", fontSize: "11px",
             }}>
-              {recipe.ingredients.length}
+              {tr.recipeIngCount(recipe.ingredients.length)}
             </span>
           </div>
         </div>
@@ -595,10 +599,10 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
           </div>
 
           <h2 className="heading-display" style={{ color: "#fff", fontSize: "22px", marginBottom: "8px" }}>
-            Watch it on YouTube
+            {tr.recipeYtTitle}
           </h2>
           <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px", marginBottom: "24px" }}>
-            See a step-by-step video for <span style={{ color: "#ffb3d1", fontWeight: 600 }}>{recipe.name}</span>
+            {tr.recipeYtDesc(recipe.name)}
           </p>
 
           <a
@@ -627,7 +631,7 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
-            Watch Now
+            {tr.recipeYtBtn}
           </a>
         </div>
       </motion.section>

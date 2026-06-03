@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import { useAppStore } from "@/lib/store";
 import { filterRecipes } from "@/lib/matching";
 import Link from "next/link";
-import { Heart, Clock, ChefHat, Shuffle, Flame, Zap } from "lucide-react";
+import { Heart, Clock, Shuffle, Flame } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
+import { t } from "@/lib/i18n";
+import type { Language } from "@/types";
 
 // Placeholder recipes until data/recipes.ts is populated
 const SAMPLE_RECIPES = [
@@ -185,6 +187,8 @@ export default function ResultsPage() {
   const selectedIngredients = useAppStore((s) => s.selectedIngredients);
   const favorites = useAppStore((s) => s.favorites);
   const toggleFavorite = useAppStore((s) => s.toggleFavorite);
+  const language = useAppStore((s) => s.language) as Language;
+  const tr = t[language];
 
   const [loading, setLoading] = useState(true);
   const [ready, setReady] = useState<typeof SAMPLE_RECIPES>([]);
@@ -304,6 +308,9 @@ export default function ResultsPage() {
                 >
                   {r.name}
                 </h3>
+                <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.75)", marginTop: 2 }}>
+                  {r.isVeg ? `🌱 ${tr.recipeVeg}` : `🍗 ${tr.recipeNonVeg}`}
+                </p>
               </div>
 
               {/* Calorie badge bottom-right */}
@@ -342,7 +349,7 @@ export default function ResultsPage() {
                   marginBottom: "12px",
                 }}>
                   <p style={{ fontSize: "11px", fontWeight: 700, color: "#92400e", marginBottom: "6px" }}>
-                    🛒 Need to buy:
+                    {tr.resultsNeedLabel}
                   </p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
                     {r.missingIngredients.map((mid: string) => (
@@ -400,7 +407,7 @@ export default function ResultsPage() {
                   borderRadius: "999px", padding: "5px 12px",
                   display: "flex", alignItems: "center", gap: "4px",
                 }}>
-                  <span style={{ fontSize: "11px", fontWeight: 700, color: "#fff" }}>Cook →</span>
+                  <span style={{ fontSize: "11px", fontWeight: 700, color: "#fff" }}>{tr.resultsCookNow}</span>
                 </div>
               </div>
             </div>
@@ -448,10 +455,10 @@ export default function ResultsPage() {
                 marginBottom: "6px",
               }}
             >
-              Your Recipes ✨
+              {tr.resultsTitle}
             </h2>
             <p className="heading-display-italic" style={{ color: "#b07a9e", fontSize: "15px" }}>
-              Cooked up just for your pantry
+              {tr.resultsSub}
             </p>
           </div>
 
@@ -469,7 +476,7 @@ export default function ResultsPage() {
               boxShadow: "0 2px 12px rgba(233,30,140,0.15)",
             }}
           >
-            <Shuffle size={15} /> Shuffle
+            <Shuffle size={15} /> {tr.resultsSurprise}
           </motion.button>
         </div>
 
@@ -500,7 +507,7 @@ export default function ResultsPage() {
                 animation: "pulse 1.2s ease-in-out infinite",
               }} />
               <span style={{ fontSize: "14px", color: "#b07a9e", fontWeight: 600 }}>
-                Finding the best matches…
+                {tr.resultsLoading}
               </span>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: "16px" }}>
@@ -528,7 +535,7 @@ export default function ResultsPage() {
                   clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)",
                   borderRadius: "6px 0 0 6px",
                 }}>
-                  ✅ Ready to Cook
+                  ✅ {tr.resultsReady}
                 </div>
                 <span style={{
                   fontSize: "13px", fontWeight: 700,
@@ -536,7 +543,7 @@ export default function ResultsPage() {
                   borderRadius: "999px", padding: "3px 10px",
                   border: "1px solid #bbf7d0",
                 }}>
-                  {ready.length} recipe{ready.length !== 1 ? "s" : ""}
+                  {tr.resultsReadyCount(ready.length)}
                 </span>
               </div>
 
@@ -565,10 +572,10 @@ export default function ResultsPage() {
               <span style={{ fontSize: "32px" }}>🤔</span>
               <div>
                 <p style={{ fontSize: "14px", fontWeight: 700, color: "#92400e", marginBottom: "2px" }}>
-                  No exact matches yet
+                  {tr.resultsNoExact}
                 </p>
                 <p style={{ fontSize: "12px", color: "#a16207" }}>
-                  But you&apos;re close! Grab 1–2 more ingredients to unlock these recipes.
+                  {tr.resultsNoExactHint}
                 </p>
               </div>
             </motion.div>
@@ -588,12 +595,12 @@ export default function ResultsPage() {
                   clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)",
                   borderRadius: "6px 0 0 6px",
                 }}>
-                  🛒 Almost There
+                  🛒 {tr.resultsAlmost}
                 </div>
                 <span style={{
                   fontSize: "12px", fontWeight: 600, color: "#92400e",
                 }}>
-                  — grab 1–2 more items
+                  {tr.resultsAlmostSub}
                 </span>
               </div>
 
@@ -619,10 +626,10 @@ export default function ResultsPage() {
             >
               <div style={{ fontSize: "64px", marginBottom: "16px" }}>🍽️</div>
               <h3 className="heading-display" style={{ fontSize: "24px", color: "#9d174d", marginBottom: "8px" }}>
-                No recipes found
+                {tr.resultsEmpty}
               </h3>
               <p style={{ fontSize: "14px", color: "#be185d", marginBottom: "24px" }}>
-                Try selecting more ingredients or a different cuisine.
+                {tr.resultsEmptyHint}
               </p>
               <Link href="/ingredients">
                 <button style={{
@@ -632,7 +639,7 @@ export default function ResultsPage() {
                   border: "none", cursor: "pointer",
                   boxShadow: "0 6px 20px rgba(255,107,157,0.4)",
                 }}>
-                  ← Change Ingredients
+                  {tr.resultsChangeIng}
                 </button>
               </Link>
             </motion.div>
