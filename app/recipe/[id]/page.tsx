@@ -1,10 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState, use } from "react";
+import { use } from "react";
 import { useAppStore } from "@/lib/store";
 import Button from "@/components/ui/Button";
-import { Heart, Clock, ChefHat, ArrowLeft } from "lucide-react";
+import { Heart, Clock, ChefHat, ArrowLeft, Flame, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Inline the same sample recipes used in results page
@@ -204,11 +204,21 @@ const SAMPLE_RECIPES = [
   },
 ];
 
-const DIFFICULTY_COLOR: Record<string, string> = {
-  Easy: "bg-green-100 text-green-700",
-  Medium: "bg-yellow-100 text-yellow-700",
-  Hard: "bg-red-100 text-red-700",
+const DIFF_CONFIG: Record<string, { color: string; bg: string; icon: string }> = {
+  Easy: { color: "#16a34a", bg: "#dcfce7", icon: "⭐" },
+  Medium: { color: "#d97706", bg: "#fef9c3", icon: "⭐⭐" },
+  Hard: { color: "#dc2626", bg: "#fee2e2", icon: "⭐⭐⭐" },
 };
+
+// Pastel bubble colors cycling for ingredients
+const BUBBLE_COLORS = [
+  { bg: "#fff0f6", border: "#f9a8d4", text: "#9d174d" },
+  { bg: "#fdf4ff", border: "#e879f9", text: "#7e22ce" },
+  { bg: "#fff7ed", border: "#fb923c", text: "#9a3412" },
+  { bg: "#f0fdf4", border: "#4ade80", text: "#166534" },
+  { bg: "#eff6ff", border: "#60a5fa", text: "#1e3a8a" },
+  { bg: "#fef9c3", border: "#facc15", text: "#854d0e" },
+];
 
 export default function RecipeDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -227,192 +237,400 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
     );
   }
 
+  const diff = DIFF_CONFIG[recipe.difficulty] ?? DIFF_CONFIG.Easy;
+
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="max-w-2xl mx-auto space-y-6 pb-10"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-2xl mx-auto pb-16"
+      style={{ position: "relative" }}
     >
-      {/* Back button */}
-      <button
-        onClick={() => router.back()}
-        className="flex items-center gap-2 text-sm font-medium px-3 py-1.5 rounded-full bg-white/70 backdrop-blur-sm border border-pink-100 text-gray-600 hover:text-primaryMid hover:border-pink-300 transition-all shadow-sm"
-      >
-        <ArrowLeft size={15} /> Back to results
-      </button>
+      {/* ── HERO ── full-bleed with wave clip */}
+      <div style={{ position: "relative", marginLeft: "-1rem", marginRight: "-1rem" }}>
+        {/* Image */}
+        <div style={{ position: "relative", height: "320px", overflow: "hidden" }}>
+          <img
+            src={recipe.image}
+            alt={recipe.name}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+          {/* Deep gradient for title contrast */}
+          <div style={{
+            position: "absolute", inset: 0,
+            background: "linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.88) 100%)"
+          }} />
 
-      {/* Hero image */}
-      <div className="relative rounded-hero overflow-hidden shadow-xl">
-        <img
-          src={recipe.image}
-          alt={recipe.name}
-          className="w-full h-72 object-cover"
-        />
-        {/* Multi-layer overlay for guaranteed text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-
-        {/* Veg badge top-right */}
-        <div className="absolute top-3 right-3">
-          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white border border-white/20">
-            {recipe.isVeg ? "🌱 Veg" : "🍗 Non-Veg"}
-          </span>
-        </div>
-
-        {/* Title area — sits on solid dark band */}
-        <div className="absolute bottom-0 left-0 right-0 px-5 pt-8 pb-5">
-          {/* Cuisine tags */}
-          <div className="flex flex-wrap gap-1.5 mb-2">
-            {recipe.cuisine.slice(0, 2).map((c) => (
-              <span
-                key={c}
-                className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-sm text-white/90 border border-white/20"
-              >
-                {c.replace(/-/g, " ")}
-              </span>
-            ))}
-          </div>
-
-          <h1
-            className="heading-display text-4xl leading-tight"
+          {/* Back button */}
+          <button
+            onClick={() => router.back()}
             style={{
-              color: "#FFFFFF",
-              textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8)",
+              position: "absolute", top: "16px", left: "16px",
+              display: "flex", alignItems: "center", gap: "6px",
+              background: "rgba(255,255,255,0.18)", backdropFilter: "blur(12px)",
+              border: "1px solid rgba(255,255,255,0.35)",
+              borderRadius: "999px", padding: "6px 14px",
+              color: "#fff", fontSize: "13px", fontWeight: 600,
+              cursor: "pointer", transition: "background 0.2s",
             }}
           >
-            {recipe.name}
-          </h1>
-          <p
-            className="text-sm mt-1.5 font-light leading-relaxed"
-            style={{ color: "rgba(255,255,255,0.85)", textShadow: "0 1px 6px rgba(0,0,0,0.7)" }}
-          >
-            {recipe.description}
-          </p>
+            <ArrowLeft size={14} /> Back
+          </button>
+
+          {/* Veg / Non-Veg dot */}
+          <div style={{
+            position: "absolute", top: "16px", right: "16px",
+            background: "rgba(0,0,0,0.45)", backdropFilter: "blur(10px)",
+            border: "1px solid rgba(255,255,255,0.25)",
+            borderRadius: "999px", padding: "5px 12px",
+            color: "#fff", fontSize: "12px", fontWeight: 700,
+          }}>
+            {recipe.isVeg ? "🌱 Veg" : "🍗 Non-Veg"}
+          </div>
+
+          {/* Title area */}
+          <div style={{ position: "absolute", bottom: "24px", left: "20px", right: "20px" }}>
+            <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", marginBottom: "8px" }}>
+              {recipe.cuisine.slice(0, 2).map((c) => (
+                <span key={c} style={{
+                  fontSize: "10px", fontWeight: 700, letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  background: "rgba(255,107,157,0.35)", backdropFilter: "blur(8px)",
+                  border: "1px solid rgba(255,107,157,0.5)",
+                  borderRadius: "999px", padding: "2px 10px", color: "#ffe0ed",
+                }}>
+                  {c.replace(/-/g, " ")}
+                </span>
+              ))}
+            </div>
+            <h1
+              className="heading-display"
+              style={{
+                fontSize: "clamp(2rem, 8vw, 2.75rem)",
+                color: "#fff",
+                lineHeight: 1.1,
+                textShadow: "0 2px 16px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,0.8)",
+                marginBottom: "6px",
+              }}
+            >
+              {recipe.name}
+            </h1>
+            <p style={{
+              fontSize: "13px", color: "rgba(255,255,255,0.82)", fontWeight: 400, lineHeight: 1.5,
+              textShadow: "0 1px 8px rgba(0,0,0,0.7)",
+            }}>
+              {recipe.description}
+            </p>
+          </div>
         </div>
+
+        {/* Wave bottom */}
+        <svg viewBox="0 0 1440 54" preserveAspectRatio="none"
+          style={{ display: "block", width: "100%", height: "54px", marginTop: "-2px" }}>
+          <path d="M0,32 C240,54 480,10 720,32 C960,54 1200,10 1440,32 L1440,54 L0,54 Z"
+            fill="#fff8fb" />
+        </svg>
       </div>
 
-      {/* Meta bar */}
-      <div className="glass-card px-4 py-3 flex flex-wrap gap-3 items-center">
-        <span
-          className={`px-3 py-1 rounded-full text-xs font-semibold tracking-wide ${
-            DIFFICULTY_COLOR[recipe.difficulty]
-          }`}
-        >
-          {recipe.difficulty}
-        </span>
-        <span className="flex items-center gap-1.5 text-sm text-gray-600 font-medium">
-          <Clock size={14} className="text-pink-400" /> {recipe.time} min
-        </span>
-        <span className="flex items-center gap-1.5 text-sm text-gray-600 font-medium">
-          <ChefHat size={14} className="text-pink-400" /> {recipe.calories} kcal
-        </span>
-        <button
-          onClick={() => toggleFav(recipe.id)}
-          className="ml-auto flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full border transition-all"
-          style={{
-            background: isFav ? "#fff0f6" : "transparent",
-            borderColor: isFav ? "#e91e8c" : "#e5e7eb",
-            color: isFav ? "#e91e8c" : "#6b7280",
-          }}
-        >
-          <Heart size={15} className={isFav ? "fill-pink-500 text-pink-500" : ""} />
-          {isFav ? "Saved" : "Save"}
-        </button>
-      </div>
-
-      {/* Ingredients */}
-      <div className="glass-card overflow-hidden">
-        {/* Section header */}
-        <div
-          className="px-5 py-3.5 flex items-center gap-2 border-b border-pink-50"
-          style={{ background: "linear-gradient(135deg,#fff0f6 0%,#fce4ec 100%)" }}
-        >
-          <span className="text-lg">🛒</span>
-          <h2 className="text-base font-bold tracking-tight" style={{ color: "#c2185b" }}>
-            Ingredients
-          </h2>
-          <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-pink-100 text-pink-600">
-            {recipe.ingredients.length} items
+      {/* ── STATS ROW ── floating pill cards */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.15 }}
+        style={{ display: "flex", gap: "10px", padding: "0 4px", marginTop: "-8px", flexWrap: "wrap" }}
+      >
+        {/* Difficulty */}
+        <div style={{
+          flex: 1, minWidth: "80px",
+          background: diff.bg,
+          border: `1.5px solid ${diff.color}33`,
+          borderRadius: "20px",
+          padding: "12px 14px",
+          display: "flex", flexDirection: "column", alignItems: "center", gap: "4px",
+        }}>
+          <span style={{ fontSize: "18px" }}>{diff.icon}</span>
+          <span style={{ fontSize: "11px", fontWeight: 700, color: diff.color, letterSpacing: "0.05em" }}>
+            {recipe.difficulty}
           </span>
         </div>
-        <ul className="divide-y divide-gray-50 px-5 py-2">
-          {recipe.ingredients.map((ing) => (
-            <li key={ing.id} className="flex justify-between items-center py-2.5 text-sm">
-              <span className="capitalize font-medium text-gray-800">
-                {ing.id.replace(/-/g, " ")}
-              </span>
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-pink-50 text-pink-600">
-                {ing.quantity}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
 
-      {/* Steps */}
-      <div className="glass-card overflow-hidden">
-        <div
-          className="px-5 py-3.5 flex items-center gap-2 border-b border-pink-50"
-          style={{ background: "linear-gradient(135deg,#fff0f6 0%,#fce4ec 100%)" }}
-        >
-          <span className="text-lg">👨‍🍳</span>
-          <h2 className="text-base font-bold tracking-tight" style={{ color: "#c2185b" }}>
-            How to Make
-          </h2>
+        {/* Time */}
+        <div style={{
+          flex: 1, minWidth: "80px",
+          background: "linear-gradient(135deg,#fff0f6,#fce4ec)",
+          border: "1.5px solid #f9a8d433",
+          borderRadius: "20px",
+          padding: "12px 14px",
+          display: "flex", flexDirection: "column", alignItems: "center", gap: "4px",
+        }}>
+          <Clock size={18} color="#e91e8c" />
+          <span style={{ fontSize: "11px", fontWeight: 700, color: "#9d174d" }}>{recipe.time} min</span>
         </div>
-        <ol className="space-y-0 px-5 py-3">
-          {recipe.steps.map((step, idx) => (
-            <li key={idx} className="flex gap-3 py-3 border-b border-gray-50 last:border-0">
-              <span
-                className="flex-shrink-0 w-7 h-7 rounded-full text-white text-xs flex items-center justify-center font-bold shadow-sm"
-                style={{ background: "linear-gradient(135deg,#FF6B9D,#FFB347)" }}
+
+        {/* Calories */}
+        <div style={{
+          flex: 1, minWidth: "80px",
+          background: "linear-gradient(135deg,#fff7ed,#ffedd5)",
+          border: "1.5px solid #fb923c33",
+          borderRadius: "20px",
+          padding: "12px 14px",
+          display: "flex", flexDirection: "column", alignItems: "center", gap: "4px",
+        }}>
+          <Flame size={18} color="#ea580c" />
+          <span style={{ fontSize: "11px", fontWeight: 700, color: "#9a3412" }}>{recipe.calories} kcal</span>
+        </div>
+
+        {/* Save */}
+        <button
+          onClick={() => toggleFav(recipe.id)}
+          style={{
+            flex: 1, minWidth: "80px",
+            background: isFav ? "linear-gradient(135deg,#fff0f6,#fce4ec)" : "#fff",
+            border: `1.5px solid ${isFav ? "#e91e8c" : "#e5e7eb"}`,
+            borderRadius: "20px",
+            padding: "12px 14px",
+            display: "flex", flexDirection: "column", alignItems: "center", gap: "4px",
+            cursor: "pointer", transition: "all 0.2s",
+          }}
+        >
+          <Heart size={18} color={isFav ? "#e91e8c" : "#9ca3af"}
+            fill={isFav ? "#e91e8c" : "none"} />
+          <span style={{ fontSize: "11px", fontWeight: 700, color: isFav ? "#e91e8c" : "#6b7280" }}>
+            {isFav ? "Saved" : "Save"}
+          </span>
+        </button>
+      </motion.div>
+
+      {/* ── INGREDIENTS ── hexagonal/bubble grid */}
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.25 }}
+        style={{ marginTop: "32px" }}
+      >
+        {/* Skewed section label */}
+        <div style={{ position: "relative", marginBottom: "20px" }}>
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: "8px",
+            background: "linear-gradient(135deg,#FF6B9D,#FF8C69)",
+            color: "#fff", fontWeight: 800, fontSize: "13px",
+            letterSpacing: "0.08em", textTransform: "uppercase",
+            padding: "8px 24px 8px 16px",
+            clipPath: "polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%)",
+            borderRadius: "8px 0 0 8px",
+          }}>
+            🛒 Ingredients
+            <span style={{
+              background: "rgba(255,255,255,0.3)", borderRadius: "999px",
+              padding: "1px 8px", fontSize: "11px",
+            }}>
+              {recipe.ingredients.length}
+            </span>
+          </div>
+        </div>
+
+        {/* Bubble grid */}
+        <div style={{
+          display: "flex", flexWrap: "wrap", gap: "10px", padding: "0 4px",
+        }}>
+          {recipe.ingredients.map((ing, i) => {
+            const c = BUBBLE_COLORS[i % BUBBLE_COLORS.length];
+            return (
+              <motion.div
+                key={ing.id}
+                initial={{ scale: 0.7, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.28 + i * 0.05, type: "spring", stiffness: 260, damping: 18 }}
+                style={{
+                  background: c.bg,
+                  border: `1.5px solid ${c.border}`,
+                  borderRadius: "999px",
+                  padding: "8px 16px",
+                  display: "flex", flexDirection: "column", alignItems: "center",
+                  gap: "2px",
+                  boxShadow: `0 2px 12px ${c.border}55`,
+                }}
               >
-                {idx + 1}
-              </span>
-              <span className="text-sm text-gray-700 leading-relaxed pt-0.5">{step}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      {/* YouTube */}
-      <div className="glass-card overflow-hidden">
-        <div
-          className="px-5 py-3.5 flex items-center gap-2 border-b border-pink-50"
-          style={{ background: "linear-gradient(135deg,#fff0f6 0%,#fce4ec 100%)" }}
-        >
-          <span className="text-lg">🎬</span>
-          <h2 className="text-base font-bold tracking-tight" style={{ color: "#c2185b" }}>
-            Watch on YouTube
-          </h2>
+                <span style={{ fontSize: "12px", fontWeight: 700, color: c.text, textTransform: "capitalize" }}>
+                  {ing.id.replace(/-/g, " ")}
+                </span>
+                <span style={{ fontSize: "10px", fontWeight: 500, color: c.text + "aa" }}>
+                  {ing.quantity}
+                </span>
+              </motion.div>
+            );
+          })}
         </div>
-        <div className="flex flex-col items-center gap-3 py-6 px-5">
-          <div
-            className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
-            style={{ background: "linear-gradient(135deg,#ff0000,#cc0000)" }}
-          >
-            <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </motion.section>
+
+      {/* ── HOW TO MAKE ── vertical timeline */}
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.35 }}
+        style={{ marginTop: "40px" }}
+      >
+        {/* Skewed label — right-aligned variant */}
+        <div style={{ position: "relative", marginBottom: "24px", display: "flex", justifyContent: "flex-end" }}>
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: "8px",
+            background: "linear-gradient(135deg,#FF8C69,#FFB347)",
+            color: "#fff", fontWeight: 800, fontSize: "13px",
+            letterSpacing: "0.08em", textTransform: "uppercase",
+            padding: "8px 16px 8px 24px",
+            clipPath: "polygon(12px 0, 100% 0, 100% 100%, 12px 100%, 0 50%)",
+            borderRadius: "0 8px 8px 0",
+          }}>
+            👨‍🍳 How to Make
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <div style={{ position: "relative", paddingLeft: "44px" }}>
+          {/* Vertical line */}
+          <div style={{
+            position: "absolute", left: "19px", top: "12px", bottom: "12px",
+            width: "2px",
+            background: "linear-gradient(180deg,#FF6B9D,#FFB347,#FF6B9D)",
+            borderRadius: "999px",
+            opacity: 0.35,
+          }} />
+
+          {recipe.steps.map((step, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.38 + idx * 0.08 }}
+              style={{
+                position: "relative", marginBottom: "20px", display: "flex", gap: "0",
+              }}
+            >
+              {/* Step bubble */}
+              <div style={{
+                position: "absolute", left: "-44px",
+                width: "38px", height: "38px",
+                borderRadius: "50%",
+                background: "linear-gradient(135deg,#FF6B9D,#FFB347)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color: "#fff", fontSize: "13px", fontWeight: 800,
+                boxShadow: "0 4px 14px rgba(255,107,157,0.45)",
+                flexShrink: 0,
+              }}>
+                {idx + 1}
+              </div>
+
+              {/* Step card — diagonal top-right notch via clip-path */}
+              <div style={{
+                flex: 1,
+                background: idx % 2 === 0
+                  ? "linear-gradient(135deg,#fff0f6,#fff8fb)"
+                  : "linear-gradient(135deg,#fff8fb,#fff7ed)",
+                border: `1.5px solid ${idx % 2 === 0 ? "#f9a8d433" : "#fb923c33"}`,
+                borderRadius: "4px 18px 18px 18px",
+                padding: "14px 16px",
+                fontSize: "14px",
+                color: "#2d1b2e",
+                lineHeight: 1.6,
+                boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+                position: "relative",
+              }}>
+                {/* Decorative corner accent */}
+                <div style={{
+                  position: "absolute", top: 0, right: 0,
+                  width: "28px", height: "28px",
+                  background: idx % 2 === 0
+                    ? "linear-gradient(135deg,#f9a8d455,transparent)"
+                    : "linear-gradient(135deg,#fb923c55,transparent)",
+                  borderRadius: "0 18px 0 28px",
+                }} />
+                {step}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* ── YOUTUBE ── organic blob card */}
+      <motion.section
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5 }}
+        style={{ marginTop: "40px" }}
+      >
+        <div style={{
+          position: "relative",
+          background: "linear-gradient(135deg,#1a0a0f 0%,#2d0a18 50%,#1a0a0f 100%)",
+          borderRadius: "32px 8px 32px 8px",
+          padding: "32px 24px",
+          overflow: "hidden",
+          textAlign: "center",
+        }}>
+          {/* Glowing blobs inside */}
+          <div style={{
+            position: "absolute", width: "200px", height: "200px",
+            borderRadius: "50%", background: "rgba(255,107,157,0.2)",
+            filter: "blur(50px)", top: "-60px", left: "-60px",
+            pointerEvents: "none",
+          }} />
+          <div style={{
+            position: "absolute", width: "160px", height: "160px",
+            borderRadius: "50%", background: "rgba(255,179,71,0.18)",
+            filter: "blur(40px)", bottom: "-40px", right: "-40px",
+            pointerEvents: "none",
+          }} />
+
+          {/* YouTube icon */}
+          <div style={{
+            width: "64px", height: "64px", borderRadius: "50%",
+            background: "linear-gradient(135deg,#ff0000,#cc0000)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            margin: "0 auto 16px",
+            boxShadow: "0 8px 24px rgba(255,0,0,0.45)",
+          }}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
           </div>
-          <p className="text-sm text-gray-500 text-center">
-            Watch a step-by-step video tutorial for{" "}
-            <strong className="text-gray-700">{recipe.name}</strong> on YouTube.
+
+          <h2 className="heading-display" style={{ color: "#fff", fontSize: "22px", marginBottom: "8px" }}>
+            Watch it on YouTube
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px", marginBottom: "24px" }}>
+            See a step-by-step video for <span style={{ color: "#ffb3d1", fontWeight: 600 }}>{recipe.name}</span>
           </p>
+
           <a
             href={`https://www.youtube.com/results?search_query=${encodeURIComponent(recipe.youtubeQuery)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-7 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
-            style={{ background: "linear-gradient(135deg,#ff0000,#cc0000)", color: "#fff" }}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: "10px",
+              background: "linear-gradient(135deg,#FF6B9D,#FFB347)",
+              color: "#fff", fontWeight: 700, fontSize: "14px",
+              padding: "12px 28px",
+              borderRadius: "999px",
+              boxShadow: "0 6px 20px rgba(255,107,157,0.5)",
+              textDecoration: "none",
+              transition: "transform 0.2s, box-shadow 0.2s",
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 10px 28px rgba(255,107,157,0.65)";
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 6px 20px rgba(255,107,157,0.5)";
+            }}
           >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
-            Watch on YouTube
+            Watch Now
           </a>
         </div>
-      </div>
-    </motion.section>
+      </motion.section>
+    </motion.div>
   );
 }
