@@ -236,93 +236,175 @@ export default function RecipeDetailPage({ params }: { params: Promise<{ id: str
       {/* Back button */}
       <button
         onClick={() => router.back()}
-        className="flex items-center gap-2 text-sm text-gray-500 hover:text-primaryMid transition-colors"
+        className="flex items-center gap-2 text-sm font-medium px-3 py-1.5 rounded-full bg-white/70 backdrop-blur-sm border border-pink-100 text-gray-600 hover:text-primaryMid hover:border-pink-300 transition-all shadow-sm"
       >
-        <ArrowLeft size={16} /> Back to results
+        <ArrowLeft size={15} /> Back to results
       </button>
 
       {/* Hero image */}
-      <div className="relative rounded-hero overflow-hidden">
+      <div className="relative rounded-hero overflow-hidden shadow-xl">
         <img
           src={recipe.image}
           alt={recipe.name}
-          className="w-full h-64 object-cover"
+          className="w-full h-72 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute bottom-4 left-4 right-4">
+        {/* Multi-layer overlay for guaranteed text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
+
+        {/* Veg badge top-right */}
+        <div className="absolute top-3 right-3">
+          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white border border-white/20">
+            {recipe.isVeg ? "🌱 Veg" : "🍗 Non-Veg"}
+          </span>
+        </div>
+
+        {/* Title area — sits on solid dark band */}
+        <div className="absolute bottom-0 left-0 right-0 px-5 pt-8 pb-5">
+          {/* Cuisine tags */}
+          <div className="flex flex-wrap gap-1.5 mb-2">
+            {recipe.cuisine.slice(0, 2).map((c) => (
+              <span
+                key={c}
+                className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-sm text-white/90 border border-white/20"
+              >
+                {c.replace(/-/g, " ")}
+              </span>
+            ))}
+          </div>
+
           <h1
-            className="heading-display text-3xl text-white drop-shadow-lg"
+            className="heading-display text-4xl leading-tight"
+            style={{
+              color: "#FFFFFF",
+              textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8)",
+            }}
           >
             {recipe.name}
           </h1>
-          <p className="text-sm text-white/80 mt-1 font-light">{recipe.description}</p>
+          <p
+            className="text-sm mt-1.5 font-light leading-relaxed"
+            style={{ color: "rgba(255,255,255,0.85)", textShadow: "0 1px 6px rgba(0,0,0,0.7)" }}
+          >
+            {recipe.description}
+          </p>
         </div>
       </div>
 
-      {/* Meta */}
-      <div className="flex flex-wrap gap-3 items-center">
-        <span className={`px-3 py-1 rounded-full text-sm font-medium ${DIFFICULTY_COLOR[recipe.difficulty]}`}>
+      {/* Meta bar */}
+      <div className="glass-card px-4 py-3 flex flex-wrap gap-3 items-center">
+        <span
+          className={`px-3 py-1 rounded-full text-xs font-semibold tracking-wide ${
+            DIFFICULTY_COLOR[recipe.difficulty]
+          }`}
+        >
           {recipe.difficulty}
         </span>
-        <span className="flex items-center gap-1 text-sm text-gray-600">
-          <Clock size={14} /> {recipe.time} min
+        <span className="flex items-center gap-1.5 text-sm text-gray-600 font-medium">
+          <Clock size={14} className="text-pink-400" /> {recipe.time} min
         </span>
-        <span className="flex items-center gap-1 text-sm text-gray-600">
-          <ChefHat size={14} /> {recipe.calories} cal
-        </span>
-        <span className="text-sm px-2 py-0.5 rounded-full bg-green-50 text-green-600">
-          {recipe.isVeg ? "🌱 Vegetarian" : "🍗 Non-Veg"}
+        <span className="flex items-center gap-1.5 text-sm text-gray-600 font-medium">
+          <ChefHat size={14} className="text-pink-400" /> {recipe.calories} kcal
         </span>
         <button
           onClick={() => toggleFav(recipe.id)}
-          className="ml-auto flex items-center gap-1 text-sm text-gray-500 hover:text-red-500 transition-colors"
+          className="ml-auto flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full border transition-all"
+          style={{
+            background: isFav ? "#fff0f6" : "transparent",
+            borderColor: isFav ? "#e91e8c" : "#e5e7eb",
+            color: isFav ? "#e91e8c" : "#6b7280",
+          }}
         >
-          <Heart size={16} className={isFav ? "fill-red-500 text-red-500" : ""} />
+          <Heart size={15} className={isFav ? "fill-pink-500 text-pink-500" : ""} />
           {isFav ? "Saved" : "Save"}
         </button>
       </div>
 
       {/* Ingredients */}
-      <div className="bg-white dark:bg-gray-800 rounded-card p-5 shadow">
-        <h2 className="text-lg font-semibold mb-3">Ingredients</h2>
-        <ul className="space-y-2">
+      <div className="glass-card overflow-hidden">
+        {/* Section header */}
+        <div
+          className="px-5 py-3.5 flex items-center gap-2 border-b border-pink-50"
+          style={{ background: "linear-gradient(135deg,#fff0f6 0%,#fce4ec 100%)" }}
+        >
+          <span className="text-lg">🛒</span>
+          <h2 className="text-base font-bold tracking-tight" style={{ color: "#c2185b" }}>
+            Ingredients
+          </h2>
+          <span className="ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-pink-100 text-pink-600">
+            {recipe.ingredients.length} items
+          </span>
+        </div>
+        <ul className="divide-y divide-gray-50 px-5 py-2">
           {recipe.ingredients.map((ing) => (
-            <li key={ing.id} className="flex justify-between text-sm border-b border-gray-100 dark:border-gray-700 pb-1">
-              <span className="capitalize">{ing.id.replace(/-/g, " ")}</span>
-              <span className="text-gray-500">{ing.quantity}</span>
+            <li key={ing.id} className="flex justify-between items-center py-2.5 text-sm">
+              <span className="capitalize font-medium text-gray-800">
+                {ing.id.replace(/-/g, " ")}
+              </span>
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-pink-50 text-pink-600">
+                {ing.quantity}
+              </span>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Steps */}
-      <div className="bg-white dark:bg-gray-800 rounded-card p-5 shadow">
-        <h2 className="text-lg font-semibold mb-3">How to Make</h2>
-        <ol className="space-y-3">
+      <div className="glass-card overflow-hidden">
+        <div
+          className="px-5 py-3.5 flex items-center gap-2 border-b border-pink-50"
+          style={{ background: "linear-gradient(135deg,#fff0f6 0%,#fce4ec 100%)" }}
+        >
+          <span className="text-lg">👨‍🍳</span>
+          <h2 className="text-base font-bold tracking-tight" style={{ color: "#c2185b" }}>
+            How to Make
+          </h2>
+        </div>
+        <ol className="space-y-0 px-5 py-3">
           {recipe.steps.map((step, idx) => (
-            <li key={idx} className="flex gap-3 text-sm">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-primaryStart to-primaryEnd text-white text-xs flex items-center justify-center font-bold">
+            <li key={idx} className="flex gap-3 py-3 border-b border-gray-50 last:border-0">
+              <span
+                className="flex-shrink-0 w-7 h-7 rounded-full text-white text-xs flex items-center justify-center font-bold shadow-sm"
+                style={{ background: "linear-gradient(135deg,#FF6B9D,#FFB347)" }}
+              >
                 {idx + 1}
               </span>
-              <span className="text-gray-700 dark:text-gray-300">{step}</span>
+              <span className="text-sm text-gray-700 leading-relaxed pt-0.5">{step}</span>
             </li>
           ))}
         </ol>
       </div>
 
       {/* YouTube */}
-      <div className="bg-white dark:bg-gray-800 rounded-card p-5 shadow flex flex-col items-center gap-4">
-        <h2 className="text-lg font-semibold self-start">Watch on YouTube</h2>
-        <div className="flex flex-col items-center gap-3 py-4 w-full">
-          <span className="text-5xl">▶️</span>
+      <div className="glass-card overflow-hidden">
+        <div
+          className="px-5 py-3.5 flex items-center gap-2 border-b border-pink-50"
+          style={{ background: "linear-gradient(135deg,#fff0f6 0%,#fce4ec 100%)" }}
+        >
+          <span className="text-lg">🎬</span>
+          <h2 className="text-base font-bold tracking-tight" style={{ color: "#c2185b" }}>
+            Watch on YouTube
+          </h2>
+        </div>
+        <div className="flex flex-col items-center gap-3 py-6 px-5">
+          <div
+            className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+            style={{ background: "linear-gradient(135deg,#ff0000,#cc0000)" }}
+          >
+            <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
           <p className="text-sm text-gray-500 text-center">
-            Watch a step-by-step video tutorial for <strong>{recipe.name}</strong> on YouTube.
+            Watch a step-by-step video tutorial for{" "}
+            <strong className="text-gray-700">{recipe.name}</strong> on YouTube.
           </p>
           <a
             href={`https://www.youtube.com/results?search_query=${encodeURIComponent(recipe.youtubeQuery)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-lg bg-red-600 hover:bg-red-700 text-white font-medium transition-all shadow hover:shadow-lg"
+            className="flex items-center gap-2 px-7 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+            style={{ background: "linear-gradient(135deg,#ff0000,#cc0000)", color: "#fff" }}
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
