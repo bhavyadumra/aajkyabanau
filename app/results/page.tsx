@@ -41,6 +41,7 @@ export default function ResultsPage() {
   const favorites = useAppStore((s) => s.favorites);
   const toggleFavorite = useAppStore((s) => s.toggleFavorite);
   const language = useAppStore((s) => s.language) as Language;
+  const vegFilter = useAppStore((s) => s.vegFilter);
   const tr = t[language];
 
   const [loading, setLoading] = useState(true);
@@ -51,17 +52,21 @@ export default function ResultsPage() {
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
-      const result = filterRecipes(recipes, selectedCuisines, selectedIngredients);
+      const result = filterRecipes(recipes, selectedCuisines, selectedIngredients, vegFilter);
       setReady(result.ready);
       setAlmostThere(result.almostThere);
       setLoading(false);
-    }, 900);
+    }, 600);
     return () => clearTimeout(timer);
-  }, [selectedCuisines, selectedIngredients, shuffleSeed]);
+  }, [selectedCuisines, selectedIngredients, shuffleSeed, vegFilter]);
+
+  const [isBlinking, setIsBlinking] = useState(false);
 
   const shuffle = () => {
     setReady((prev) => [...prev].sort(() => Math.random() - 0.5));
     setShuffleSeed((s) => s + 1);
+    setIsBlinking(true);
+    setTimeout(() => setIsBlinking(false), 600);
   };
 
   const prettyName = (id: string) =>
@@ -326,9 +331,9 @@ export default function ResultsPage() {
           </div>
 
           {/* Shuffle button */}
-          <motion.button
-            whileTap={{ scale: 0.93, rotate: 180 }}
+          <button
             onClick={shuffle}
+            className={isBlinking ? 'shuffle-blink' : ''}
             style={{
               display: "flex", alignItems: "center", gap: "6px",
               background: "linear-gradient(135deg,#fff0f6,#fce4ec)",
@@ -337,10 +342,19 @@ export default function ResultsPage() {
               fontSize: "13px", fontWeight: 700, color: "#9d174d",
               cursor: "pointer", flexShrink: 0,
               boxShadow: "0 2px 12px rgba(233,30,140,0.15)",
+              transition: "box-shadow 0.2s, transform 0.1s",
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 4px 18px rgba(233,30,140,0.28)";
+              (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 2px 12px rgba(233,30,140,0.15)";
+              (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)";
             }}
           >
             <Shuffle size={15} /> {tr.resultsSurprise}
-          </motion.button>
+          </button>
         </div>
 
         {/* Decorative divider */}

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { AppState, Language } from '@/types';
+import { AppState, Language, VegFilter } from '@/types';
 
 export const useAppStore = create<AppState>((set) => ({
   selectedCuisines: [],
@@ -9,6 +9,7 @@ export const useAppStore = create<AppState>((set) => ({
   recentlyUsedIngredients: [],
   language: 'en' as Language,
   darkMode: false,
+  vegFilter: 'both' as VegFilter,
 
   toggleCuisine: (id) =>
     set((state) => {
@@ -36,6 +37,9 @@ export const useAppStore = create<AppState>((set) => ({
       };
     }),
 
+  // Bulk set — avoids stale-closure bug when toggling many at once
+  setIngredients: (ids) => set({ selectedIngredients: ids }),
+
   toggleFavorite: (id) =>
     set((state) => {
       const exists = state.favorites.includes(id);
@@ -57,6 +61,8 @@ export const useAppStore = create<AppState>((set) => ({
     })),
 
   setLanguage: (lang) => set({ language: lang }),
+
+  setVegFilter: (filter) => set({ vegFilter: filter }),
 
   toggleDarkMode: () =>
     set((state) => ({ darkMode: !state.darkMode })),

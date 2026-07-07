@@ -5,13 +5,21 @@ import { Sun, Moon, ChevronDown, Globe } from "lucide-react";
 import { useAppStore } from "@/lib/store";
 import { LANGUAGES } from "@/lib/i18n";
 import { useState, useRef, useEffect } from "react";
-import type { Language } from "@/types";
+import type { Language, VegFilter } from "@/types";
 
 export default function Navbar() {
   const darkMode = useAppStore((s) => s.darkMode);
   const toggleDark = useAppStore((s) => s.toggleDarkMode);
   const language = useAppStore((s) => s.language) as Language;
   const setLanguage = useAppStore((s) => s.setLanguage);
+  const vegFilter = useAppStore((s) => s.vegFilter);
+  const setVegFilter = useAppStore((s) => s.setVegFilter);
+
+  const VEG_OPTIONS: { value: VegFilter; label: string; emoji: string }[] = [
+    { value: 'veg', label: 'Veg', emoji: '🌱' },
+    { value: 'both', label: 'Both', emoji: '🍽️' },
+    { value: 'non-veg', label: 'Non-Veg', emoji: '🍗' },
+  ];
 
   const [open, setOpen] = useState(false);
   const dropRef = useRef<HTMLDivElement>(null);
@@ -63,36 +71,52 @@ export default function Navbar() {
         </span>
       </Link>
 
-      {/* Center nav */}
-      <Link
-        href="/spin"
+      {/* Center — Veg/Both/Non-Veg toggle */}
+      <div
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 7,
-          padding: '7px 16px',
-          borderRadius: 100,
-          background: 'linear-gradient(135deg,#ff6b9d,#e91e8c)',
-          color: '#fff',
-          fontSize: '0.82rem',
-          fontWeight: 700,
-          textDecoration: 'none',
-          boxShadow: '0 3px 14px rgba(233,30,140,0.35)',
-          transition: 'all 0.2s',
-          letterSpacing: '-0.01em',
-          whiteSpace: 'nowrap',
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 4px 20px rgba(233,30,140,0.5)';
-          (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px)';
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 3px 14px rgba(233,30,140,0.35)';
-          (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)';
+          background: 'rgba(233,30,140,0.06)',
+          border: '1px solid rgba(233,30,140,0.18)',
+          borderRadius: 999,
+          padding: '3px',
+          gap: '2px',
         }}
       >
-        🎡 <span className="hidden sm:inline">Spin the Wheel</span>
-      </Link>
+        {VEG_OPTIONS.map((opt) => {
+          const isActive = vegFilter === opt.value;
+          return (
+            <button
+              key={opt.value}
+              onClick={() => setVegFilter(opt.value)}
+              title={opt.label}
+              style={{
+                display: 'flex', alignItems: 'center', gap: '4px',
+                padding: '5px 10px',
+                borderRadius: 999,
+                border: 'none',
+                fontSize: '0.75rem',
+                fontWeight: isActive ? 700 : 500,
+                cursor: 'pointer',
+                transition: 'all 0.18s',
+                background: isActive
+                  ? opt.value === 'veg'
+                    ? 'linear-gradient(135deg,#16a34a,#4ade80)'
+                    : opt.value === 'non-veg'
+                      ? 'linear-gradient(135deg,#e91e8c,#ff6b9d)'
+                      : 'linear-gradient(135deg,#f97316,#fbbf24)'
+                  : 'transparent',
+                color: isActive ? '#fff' : '#9c6b8a',
+                boxShadow: isActive ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              <span>{opt.emoji}</span>
+              <span className="hidden sm:inline">{opt.label}</span>
+            </button>
+          );
+        })}
+      </div>
 
       {/* Right controls */}
       <div className="flex items-center gap-2">

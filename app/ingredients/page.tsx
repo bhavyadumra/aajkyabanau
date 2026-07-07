@@ -11,13 +11,24 @@ import { t } from "@/lib/i18n";
 export default function IngredientsPage() {
   const selected = useAppStore((s) => s.selectedIngredients);
   const toggle = useAppStore((s) => s.toggleIngredient);
+  const setIngredients = useAppStore((s) => s.setIngredients);
+  const vegFilter = useAppStore((s) => s.vegFilter);
   const language = useAppStore((s) => s.language);
   const tr = t[language];
 
   const [activeCat, setActiveCat] = useState<string>("All");
   const [search, setSearch] = useState("");
 
+  // Hide non-veg category entirely when in veg-only mode
+  const visibleCategories = ingredientCategories.filter(
+    (cat) => !(vegFilter === 'veg' && cat === 'Non-Veg')
+  );
+
   const filtered = ingredients.filter((i) => {
+    if (vegFilter === 'veg' && i.category === 'Non-Veg') return false;
+    if (vegFilter === 'non-veg' && i.category !== 'Non-Veg') {
+      // In non-veg mode still show shared ingredients (not exclusively non-veg)
+    }
     const name = language === "hi" ? i.nameHindi : i.name;
     const matchesCat = activeCat === "All" || i.category === activeCat;
     const matchesSearch = name.toLowerCase().includes(search.toLowerCase()) ||
@@ -28,11 +39,16 @@ export default function IngredientsPage() {
   const filteredIds = filtered.map((i) => i.id);
   const allSelectedInView = filteredIds.length > 0 && filteredIds.every((id) => selected.includes(id));
 
+  // Use bulk setIngredients to avoid stale-closure bug
   const toggleSelectAll = () => {
-    filteredIds.forEach((id) => {
-      const isSelected = selected.includes(id);
-      if (allSelectedInView ? isSelected : !isSelected) toggle(id);
-    });
+    if (allSelectedInView) {
+      // Deselect all in view
+      setIngredients(selected.filter((id) => !filteredIds.includes(id)));
+    } else {
+      // Select all in view (merge with existing)
+      const merged = Array.from(new Set([...selected, ...filteredIds]));
+      setIngredients(merged);
+    }
   };
 
   return (
@@ -76,7 +92,7 @@ export default function IngredientsPage() {
 
       {/* Category tabs */}
       <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-        {ingredientCategories.map((cat) => (
+        {visibleCategories.map((cat) => (
           <button
             key={cat}
             onClick={() => { setActiveCat(cat); setSearch(""); }}

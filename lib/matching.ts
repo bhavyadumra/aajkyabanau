@@ -1,4 +1,5 @@
 import { Recipe } from '@/types';
+import type { VegFilter } from '@/types';
 
 /**
  * Calculate match score for a recipe based on selected ingredient IDs.
@@ -36,18 +37,24 @@ export interface FilteredResults {
  * - ready: every required ingredient is in selectedIngredientIds
  * - almostThere: missing exactly 1 or 2 required ingredients
  *
- * Also filters by selected cuisines if any are chosen.
+ * Also filters by selected cuisines if any are chosen,
+ * and by vegFilter (veg / both / non-veg).
  */
 export function filterRecipes(
   allRecipes: Recipe[],
   selectedCuisines: string[],
   selectedIngredientIds: string[],
+  vegFilter: VegFilter = 'both',
 ): FilteredResults {
   const ready: Recipe[] = [];
   const almostThere: (Recipe & { missingIngredients: string[] })[] = [];
 
   for (const recipe of allRecipes) {
-    // Cuisine filter
+    // ── Veg filter ──
+    if (vegFilter === 'veg' && !recipe.isVeg) continue;
+    if (vegFilter === 'non-veg' && recipe.isVeg) continue;
+
+    // ── Cuisine filter ──
     if (
       selectedCuisines.length > 0 &&
       !recipe.cuisine.some((c) => selectedCuisines.includes(c))
@@ -55,6 +62,7 @@ export function filterRecipes(
       continue;
     }
 
+    // ── Ingredient matching ──
     const missing = getMissingIngredients(recipe, selectedIngredientIds);
 
     if (missing.length === 0) {
