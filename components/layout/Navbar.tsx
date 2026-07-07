@@ -63,6 +63,37 @@ export default function Navbar() {
         </span>
       </Link>
 
+      {/* Center nav */}
+      <Link
+        href="/spin"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 7,
+          padding: '7px 16px',
+          borderRadius: 100,
+          background: 'linear-gradient(135deg,#ff6b9d,#e91e8c)',
+          color: '#fff',
+          fontSize: '0.82rem',
+          fontWeight: 700,
+          textDecoration: 'none',
+          boxShadow: '0 3px 14px rgba(233,30,140,0.35)',
+          transition: 'all 0.2s',
+          letterSpacing: '-0.01em',
+          whiteSpace: 'nowrap',
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 4px 20px rgba(233,30,140,0.5)';
+          (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px)';
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 3px 14px rgba(233,30,140,0.35)';
+          (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)';
+        }}
+      >
+        🎡 <span className="hidden sm:inline">Spin the Wheel</span>
+      </Link>
+
       {/* Right controls */}
       <div className="flex items-center gap-2">
 

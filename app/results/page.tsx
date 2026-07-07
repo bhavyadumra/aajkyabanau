@@ -3,168 +3,21 @@
 import { useEffect, useState } from "react";
 import { useAppStore } from "@/lib/store";
 import { filterRecipes } from "@/lib/matching";
+import { recipes, totalRecipeCount } from "@/data/recipes";
 import Link from "next/link";
 import { Heart, Clock, Shuffle, Flame } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { t } from "@/lib/i18n";
-import type { Language } from "@/types";
+import type { Language, Recipe } from "@/types";
 
-// Placeholder recipes until data/recipes.ts is populated
-const SAMPLE_RECIPES = [
-  {
-    id: "aloo-paratha",
-    name: "Aloo Paratha",
-    cuisine: ["north-indian", "breakfast", "punjabi"],
-    ingredients: [
-      { id: "atta", quantity: "2 cups" },
-      { id: "potato", quantity: "3 medium" },
-      { id: "onion", quantity: "1 small" },
-      { id: "green-chilli", quantity: "2" },
-      { id: "coriander", quantity: "handful" },
-      { id: "ghee", quantity: "2 tbsp" },
-      { id: "salt", quantity: "to taste" },
-    ],
-    time: 30,
-    difficulty: "Easy",
-    image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80",
-    description: "Crispy whole wheat flatbread stuffed with spiced mashed potato.",
-    youtubeQuery: "aloo paratha recipe",
-    tags: ["breakfast", "vegetarian"],
-    isVeg: true,
-    calories: 320,
-  },
-  {
-    id: "dal-tadka",
-    name: "Dal Tadka",
-    cuisine: ["north-indian"],
-    ingredients: [
-      { id: "toor-dal", quantity: "1 cup" },
-      { id: "onion", quantity: "1 medium" },
-      { id: "tomato", quantity: "2 medium" },
-      { id: "garlic", quantity: "4 cloves" },
-      { id: "ginger", quantity: "1 inch" },
-      { id: "cumin", quantity: "1 tsp" },
-      { id: "turmeric", quantity: "1/2 tsp" },
-      { id: "red-chilli", quantity: "1 tsp" },
-      { id: "garam-masala", quantity: "1/2 tsp" },
-      { id: "oil", quantity: "2 tbsp" },
-      { id: "salt", quantity: "to taste" },
-      { id: "coriander", quantity: "for garnish" },
-    ],
-    time: 40,
-    difficulty: "Easy",
-    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80",
-    description: "Comforting lentil curry with a sizzling spiced tadka.",
-    youtubeQuery: "dal tadka recipe restaurant style",
-    tags: ["dal", "vegetarian", "lunch"],
-    isVeg: true,
-    calories: 250,
-  },
-  {
-    id: "paneer-butter-masala",
-    name: "Paneer Butter Masala",
-    cuisine: ["north-indian", "mughlai"],
-    ingredients: [
-      { id: "paneer", quantity: "250g" },
-      { id: "tomato", quantity: "4 medium" },
-      { id: "onion", quantity: "2 medium" },
-      { id: "butter", quantity: "3 tbsp" },
-      { id: "cream", quantity: "3 tbsp" },
-      { id: "garlic", quantity: "5 cloves" },
-      { id: "ginger", quantity: "1 inch" },
-      { id: "cashew", quantity: "10-12" },
-      { id: "red-chilli", quantity: "1 tsp" },
-      { id: "garam-masala", quantity: "1 tsp" },
-      { id: "salt", quantity: "to taste" },
-      { id: "sugar", quantity: "1 tsp" },
-    ],
-    time: 45,
-    difficulty: "Medium",
-    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80",
-    description: "Silky, rich tomato-based gravy with soft paneer cubes.",
-    youtubeQuery: "paneer butter masala recipe",
-    tags: ["paneer", "vegetarian", "dinner"],
-    isVeg: true,
-    calories: 420,
-  },
-  {
-    id: "poha",
-    name: "Poha",
-    cuisine: ["maharashtrian", "breakfast"],
-    ingredients: [
-      { id: "poha", quantity: "2 cups" },
-      { id: "onion", quantity: "1 medium" },
-      { id: "potato", quantity: "1 small" },
-      { id: "peanuts", quantity: "2 tbsp" },
-      { id: "mustard-seeds", quantity: "1 tsp" },
-      { id: "curry-leaves", quantity: "8-10" },
-      { id: "green-chilli", quantity: "1-2" },
-      { id: "turmeric", quantity: "1/2 tsp" },
-      { id: "lemon", quantity: "1" },
-      { id: "sugar", quantity: "1 tsp" },
-      { id: "salt", quantity: "to taste" },
-      { id: "oil", quantity: "2 tbsp" },
-      { id: "coriander", quantity: "for garnish" },
-    ],
-    time: 20,
-    difficulty: "Easy",
-    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80",
-    description: "Light and fluffy flattened rice breakfast tossed with spices.",
-    youtubeQuery: "poha recipe Maharashtra style",
-    tags: ["breakfast", "vegetarian", "quick"],
-    isVeg: true,
-    calories: 220,
-  },
-  {
-    id: "rajma-chawal",
-    name: "Rajma Chawal",
-    cuisine: ["north-indian", "punjabi"],
-    ingredients: [
-      { id: "rajma", quantity: "1 cup" },
-      { id: "rice", quantity: "2 cups" },
-      { id: "onion", quantity: "2 medium" },
-      { id: "tomato", quantity: "3 medium" },
-      { id: "garlic", quantity: "6 cloves" },
-      { id: "ginger", quantity: "1 inch" },
-      { id: "oil", quantity: "3 tbsp" },
-      { id: "cumin", quantity: "1 tsp" },
-      { id: "red-chilli", quantity: "1 tsp" },
-      { id: "coriander-powder", quantity: "2 tsp" },
-      { id: "garam-masala", quantity: "1 tsp" },
-      { id: "salt", quantity: "to taste" },
-    ],
-    time: 60,
-    difficulty: "Medium",
-    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80",
-    description: "Classic kidney bean curry served over steamed rice — ultimate comfort food.",
-    youtubeQuery: "rajma chawal recipe Punjabi",
-    tags: ["lunch", "vegetarian", "comfort"],
-    isVeg: true,
-    calories: 380,
-  },
-  {
-    id: "masala-chai",
-    name: "Masala Chai",
-    cuisine: ["snacks"],
-    ingredients: [
-      { id: "milk", quantity: "1 cup" },
-      { id: "cardamom", quantity: "2 pods" },
-      { id: "ginger", quantity: "small piece" },
-      { id: "sugar", quantity: "2 tsp" },
-      { id: "cloves", quantity: "2" },
-      { id: "cinnamon", quantity: "small piece" },
-    ],
-    time: 10,
-    difficulty: "Easy",
-    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80",
-    description: "Aromatic spiced Indian tea brewed to perfection.",
-    youtubeQuery: "masala chai recipe",
-    tags: ["drink", "vegetarian", "quick"],
-    isVeg: true,
-    calories: 80,
-  },
-];
+// ─────────────────────────────────────────────────────────────────────────────
+// Recipes are loaded from @/data/recipes (generated by scripts/build_recipes.py)
+// To refresh with Kaggle data:
+//   1. Add ~/.kaggle/kaggle.json
+//   2. Run: python3 scripts/build_recipes.py
+// ─────────────────────────────────────────────────────────────────────────────
+
 
 const DIFF_CONFIG: Record<string, { color: string; bg: string; label: string }> = {
   Easy:   { color: "#16a34a", bg: "#dcfce7", label: "Easy" },
@@ -191,16 +44,16 @@ export default function ResultsPage() {
   const tr = t[language];
 
   const [loading, setLoading] = useState(true);
-  const [ready, setReady] = useState<typeof SAMPLE_RECIPES>([]);
-  const [almostThere, setAlmostThere] = useState<(typeof SAMPLE_RECIPES[0] & { missingIngredients: string[] })[]>([]);
+  const [ready, setReady] = useState<Recipe[]>([]);
+  const [almostThere, setAlmostThere] = useState<(Recipe & { missingIngredients: string[] })[]>([]);
   const [shuffleSeed, setShuffleSeed] = useState(0);
 
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
-      const result = filterRecipes(SAMPLE_RECIPES as any, selectedCuisines, selectedIngredients);
-      setReady(result.ready as any);
-      setAlmostThere(result.almostThere as any);
+      const result = filterRecipes(recipes, selectedCuisines, selectedIngredients);
+      setReady(result.ready);
+      setAlmostThere(result.almostThere);
       setLoading(false);
     }, 900);
     return () => clearTimeout(timer);
@@ -460,6 +313,16 @@ export default function ResultsPage() {
             <p className="heading-display-italic" style={{ color: "#b07a9e", fontSize: "15px" }}>
               {tr.resultsSub}
             </p>
+            {/* Dataset size pill */}
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: "5px",
+              background: "linear-gradient(135deg,rgba(233,30,140,0.06),rgba(255,107,157,0.08))",
+              border: "1px solid rgba(233,30,140,0.18)",
+              borderRadius: "999px", padding: "3px 10px", marginTop: "6px",
+            }}>
+              <span style={{ fontSize: "11px", color: "#be185d", fontWeight: 700 }}>🍽️ {totalRecipeCount} recipes</span>
+              <span style={{ fontSize: "10px", color: "#c77ab4" }}>in database</span>
+            </div>
           </div>
 
           {/* Shuffle button */}

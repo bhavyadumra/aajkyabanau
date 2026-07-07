@@ -92,6 +92,29 @@ export default function HomePage() {
               {tr.ctaSkip}
             </motion.button>
           </Link>
+          <Link href="/spin">
+            <motion.button
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              style={{
+                background: 'linear-gradient(135deg,#a78bfa,#7c3aed)',
+                color: '#fff',
+                fontWeight: 600,
+                borderRadius: 16,
+                padding: '12px 32px',
+                fontSize: '1rem',
+                boxShadow: '0 4px 18px rgba(124,58,237,0.35)',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+              } as React.CSSProperties}
+            >
+              🎡 Spin the Wheel
+            </motion.button>
+          </Link>
         </div>
 
         {/* Feature pills */}

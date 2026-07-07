@@ -60,15 +60,15 @@ export function filterRecipes(
     if (missing.length === 0) {
       // All required ingredients available
       ready.push({ ...recipe, matchScore: 100 });
-    } else if (missing.length <= 2) {
-      // Missing just 1 or 2 — show as "almost there"
+    } else if (missing.length <= 3) {
+      // Missing 1–3 required ingredients — show as "almost there"
       almostThere.push({
         ...recipe,
         matchScore: calculateMatchScore(recipe, selectedIngredientIds),
         missingIngredients: missing,
       });
     }
-    // Missing 3+ ingredients — don't show
+    // Missing 4+ ingredients — don't show
   }
 
   // Sort ready by time (quickest first)

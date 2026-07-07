@@ -1,0 +1,874 @@
+[
+  {
+    "id": "aloo-paratha",
+    "name": "Aloo Paratha",
+    "nameHindi": "आलू पराठा",
+    "cuisine": [
+      "north-indian",
+      "breakfast",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "atta",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "potato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 small"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2"
+      },
+      {
+        "id": "coriander",
+        "quantity": "handful",
+        "optional": true
+      },
+      {
+        "id": "ghee",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      }
+    ],
+    "time": 30,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80",
+    "description": "Crispy whole wheat flatbread stuffed with spiced mashed potato.",
+    "steps": [
+      "Boil and mash potatoes. Mix with onion, chilli, coriander, salt.",
+      "Knead atta into smooth dough.",
+      "Stuff and roll flat.",
+      "Cook on hot tawa with ghee until golden.",
+      "Serve hot with curd and pickle."
+    ],
+    "youtubeQuery": "aloo paratha recipe",
+    "tags": [
+      "breakfast",
+      "vegetarian"
+    ],
+    "isVeg": true,
+    "calories": 320
+  },
+  {
+    "id": "dal-tadka",
+    "name": "Dal Tadka",
+    "nameHindi": "दाल तड़का",
+    "cuisine": [
+      "north-indian"
+    ],
+    "ingredients": [
+      {
+        "id": "toor-dal",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "oil",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      }
+    ],
+    "time": 40,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80",
+    "description": "Comforting lentil curry with a sizzling spiced tadka.",
+    "steps": [
+      "Pressure cook dal with turmeric and salt.",
+      "Saute onion, ginger-garlic, tomato and spices.",
+      "Add cooked dal and simmer 10 mins.",
+      "Pour cumin-chilli tadka.",
+      "Garnish with coriander and serve."
+    ],
+    "youtubeQuery": "dal tadka recipe restaurant style",
+    "tags": [
+      "vegetarian",
+      "lunch"
+    ],
+    "isVeg": true,
+    "calories": 250
+  },
+  {
+    "id": "paneer-butter-masala",
+    "name": "Paneer Butter Masala",
+    "nameHindi": "पनीर बटर मसाला",
+    "cuisine": [
+      "north-indian",
+      "mughlai"
+    ],
+    "ingredients": [
+      {
+        "id": "paneer",
+        "quantity": "250g"
+      },
+      {
+        "id": "tomato",
+        "quantity": "4 medium"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "butter",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "garlic",
+        "quantity": "5 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "cashew",
+        "quantity": "10-12",
+        "optional": true
+      },
+      {
+        "id": "cream",
+        "quantity": "3 tbsp",
+        "optional": true
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      }
+    ],
+    "time": 45,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80",
+    "description": "Silky, rich tomato-based gravy with soft paneer cubes.",
+    "steps": [
+      "Blend tomato, onion, cashew, ginger, garlic into paste.",
+      "Cook paste in butter, add spices.",
+      "Add paneer and simmer 10 mins.",
+      "Finish with cream and sugar."
+    ],
+    "youtubeQuery": "paneer butter masala recipe",
+    "tags": [
+      "vegetarian",
+      "dinner"
+    ],
+    "isVeg": true,
+    "calories": 420
+  },
+  {
+    "id": "poha",
+    "name": "Poha",
+    "nameHindi": "पोहा",
+    "cuisine": [
+      "maharashtrian",
+      "breakfast"
+    ],
+    "ingredients": [
+      {
+        "id": "poha",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "mustard-seeds",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "1-2"
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "peanuts",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "curry-leaves",
+        "quantity": "8-10",
+        "optional": true
+      },
+      {
+        "id": "lemon",
+        "quantity": "1",
+        "optional": true
+      }
+    ],
+    "time": 20,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80",
+    "description": "Light and fluffy flattened rice breakfast tossed with spices.",
+    "steps": [
+      "Rinse poha and let soften 5 mins.",
+      "Temper mustard seeds, curry leaves, green chilli in oil.",
+      "Add onion and cook.",
+      "Mix in poha, turmeric, salt, sugar.",
+      "Squeeze lemon and serve."
+    ],
+    "youtubeQuery": "poha recipe Maharashtra style",
+    "tags": [
+      "breakfast",
+      "vegetarian",
+      "quick"
+    ],
+    "isVeg": true,
+    "calories": 220
+  },
+  {
+    "id": "rajma-chawal",
+    "name": "Rajma Chawal",
+    "nameHindi": "राजमा चावल",
+    "cuisine": [
+      "north-indian",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "rajma",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "rice",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "6 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      }
+    ],
+    "time": 60,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80",
+    "description": "Classic kidney bean curry served over steamed rice - ultimate comfort food.",
+    "steps": [
+      "Soak rajma overnight, pressure cook.",
+      "Saute onion, ginger-garlic.",
+      "Add tomato and spices, cook until oil separates.",
+      "Add rajma and simmer 20 min.",
+      "Serve with steamed rice."
+    ],
+    "youtubeQuery": "rajma chawal recipe Punjabi",
+    "tags": [
+      "vegetarian",
+      "lunch",
+      "comfort"
+    ],
+    "isVeg": true,
+    "calories": 380
+  },
+  {
+    "id": "masala-chai",
+    "name": "Masala Chai",
+    "nameHindi": "मसाला चाय",
+    "cuisine": [
+      "snacks"
+    ],
+    "ingredients": [
+      {
+        "id": "milk",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "ginger",
+        "quantity": "small piece"
+      },
+      {
+        "id": "cardamom",
+        "quantity": "2 pods",
+        "optional": true
+      },
+      {
+        "id": "sugar",
+        "quantity": "2 tsp",
+        "optional": true
+      }
+    ],
+    "time": 10,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80",
+    "description": "Aromatic spiced Indian tea brewed to perfection.",
+    "steps": [
+      "Boil water with ginger and cardamom.",
+      "Add tea leaves and simmer 2 mins.",
+      "Add milk and sugar.",
+      "Strain and serve hot."
+    ],
+    "youtubeQuery": "masala chai recipe",
+    "tags": [
+      "vegetarian",
+      "quick",
+      "drink"
+    ],
+    "isVeg": true,
+    "calories": 80
+  },
+  {
+    "id": "besan-chilla",
+    "name": "Besan Chilla",
+    "nameHindi": "बेसन चीला",
+    "cuisine": [
+      "north-indian",
+      "breakfast"
+    ],
+    "ingredients": [
+      {
+        "id": "besan",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 small"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "1"
+      },
+      {
+        "id": "tomato",
+        "quantity": "1 small",
+        "optional": true
+      },
+      {
+        "id": "coriander",
+        "quantity": "handful",
+        "optional": true
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      }
+    ],
+    "time": 15,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80",
+    "description": "Protein-rich gram flour pancakes - quick, crispy and delicious.",
+    "steps": [
+      "Mix besan with water into smooth batter.",
+      "Add veggies and spices.",
+      "Pour on hot pan and spread thin.",
+      "Cook both sides until golden brown."
+    ],
+    "youtubeQuery": "besan chilla recipe",
+    "tags": [
+      "breakfast",
+      "vegetarian",
+      "quick"
+    ],
+    "isVeg": true,
+    "calories": 180
+  },
+  {
+    "id": "palak-paneer",
+    "name": "Palak Paneer",
+    "nameHindi": "पालक पनीर",
+    "cuisine": [
+      "north-indian",
+      "mughlai"
+    ],
+    "ingredients": [
+      {
+        "id": "spinach",
+        "quantity": "2 bunches"
+      },
+      {
+        "id": "paneer",
+        "quantity": "200g"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "tomato",
+        "quantity": "1 medium",
+        "optional": true
+      },
+      {
+        "id": "cream",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1/2 tsp",
+        "optional": true
+      }
+    ],
+    "time": 30,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80",
+    "description": "Creamy spinach gravy with golden paneer cubes - rich, vibrant and nutritious.",
+    "steps": [
+      "Blanch spinach and blend smooth.",
+      "Saute onion, ginger-garlic.",
+      "Add spices and spinach puree.",
+      "Add paneer and simmer.",
+      "Finish with cream."
+    ],
+    "youtubeQuery": "palak paneer recipe",
+    "tags": [
+      "vegetarian",
+      "dinner",
+      "healthy"
+    ],
+    "isVeg": true,
+    "calories": 310
+  },
+  {
+    "id": "chole-bhature",
+    "name": "Chole Bhature",
+    "nameHindi": "छोले भटूरे",
+    "cuisine": [
+      "north-indian",
+      "punjabi",
+      "street-food"
+    ],
+    "ingredients": [
+      {
+        "id": "kabuli-chana",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "5 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "chana-masala",
+        "quantity": "2 tsp"
+      },
+      {
+        "id": "maida",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "curd",
+        "quantity": "2 tbsp"
+      }
+    ],
+    "time": 60,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",
+    "description": "Spicy chickpea curry served with fluffy deep-fried bread - a North Indian favourite.",
+    "steps": [
+      "Soak and pressure cook chole.",
+      "Saute onion, ginger-garlic.",
+      "Add tomato and masala, cook until oil separates.",
+      "Add chole and simmer.",
+      "Knead maida dough, roll and deep fry bhature."
+    ],
+    "youtubeQuery": "chole bhature recipe",
+    "tags": [
+      "vegetarian",
+      "street-food"
+    ],
+    "isVeg": true,
+    "calories": 520
+  },
+  {
+    "id": "chicken-biryani",
+    "name": "Chicken Biryani",
+    "nameHindi": "चिकन बिरयानी",
+    "cuisine": [
+      "mughlai",
+      "north-indian"
+    ],
+    "ingredients": [
+      {
+        "id": "chicken",
+        "quantity": "500g"
+      },
+      {
+        "id": "rice",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "onion",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "curd",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "garlic",
+        "quantity": "6 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "2 inches"
+      },
+      {
+        "id": "biryani-masala",
+        "quantity": "2 tsp"
+      },
+      {
+        "id": "mint",
+        "quantity": "handful",
+        "optional": true
+      },
+      {
+        "id": "ghee",
+        "quantity": "3 tbsp",
+        "optional": true
+      }
+    ],
+    "time": 90,
+    "difficulty": "Hard",
+    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80",
+    "description": "Aromatic layered rice and chicken cooked dum-style for a regal feast.",
+    "steps": [
+      "Marinate chicken with curd and spices 30 min.",
+      "Parboil rice with whole spices.",
+      "Fry onions until caramelised.",
+      "Layer chicken and rice in pot.",
+      "Dum cook on low flame 25 min."
+    ],
+    "youtubeQuery": "chicken biryani recipe dum style",
+    "tags": [
+      "non-veg",
+      "dinner"
+    ],
+    "isVeg": false,
+    "calories": 580
+  },
+  {
+    "id": "masala-dosa",
+    "name": "Masala Dosa",
+    "nameHindi": "मसाला डोसा",
+    "cuisine": [
+      "south-indian",
+      "breakfast"
+    ],
+    "ingredients": [
+      {
+        "id": "rice",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "urad-dal",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "potato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "mustard-seeds",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "curry-leaves",
+        "quantity": "10",
+        "optional": true
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/2 tsp",
+        "optional": true
+      }
+    ],
+    "time": 30,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&q=80",
+    "description": "Crispy fermented rice crepe filled with spiced potato - South India's signature dish.",
+    "steps": [
+      "Soak and grind rice+dal, ferment overnight.",
+      "Prepare potato masala filling.",
+      "Spread thin batter on hot tawa.",
+      "Add filling, fold and serve with sambar."
+    ],
+    "youtubeQuery": "masala dosa recipe authentic",
+    "tags": [
+      "vegetarian",
+      "breakfast"
+    ],
+    "isVeg": true,
+    "calories": 300
+  },
+  {
+    "id": "egg-bhurji",
+    "name": "Egg Bhurji",
+    "nameHindi": "एग भुर्जी",
+    "cuisine": [
+      "north-indian",
+      "breakfast"
+    ],
+    "ingredients": [
+      {
+        "id": "eggs",
+        "quantity": "3"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "1"
+      },
+      {
+        "id": "coriander",
+        "quantity": "handful",
+        "optional": true
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/4 tsp",
+        "optional": true
+      }
+    ],
+    "time": 10,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80",
+    "description": "Spicy Indian scrambled eggs with onion, tomato and green chilli.",
+    "steps": [
+      "Beat eggs lightly.",
+      "Saute onion, chilli, tomato.",
+      "Add eggs and scramble on medium heat.",
+      "Garnish with coriander and serve."
+    ],
+    "youtubeQuery": "egg bhurji recipe",
+    "tags": [
+      "non-veg",
+      "breakfast",
+      "quick"
+    ],
+    "isVeg": false,
+    "calories": 190
+  },
+  {
+    "id": "moong-dal-khichdi",
+    "name": "Moong Dal Khichdi",
+    "nameHindi": "मूंग दाल खिचड़ी",
+    "cuisine": [
+      "north-indian",
+      "healthy"
+    ],
+    "ingredients": [
+      {
+        "id": "moong-dal",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "rice",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch",
+        "optional": true
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/4 tsp",
+        "optional": true
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "ghee",
+        "quantity": "1 tbsp",
+        "optional": true
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      }
+    ],
+    "time": 25,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80",
+    "description": "Wholesome one-pot lentil and rice comfort food, perfect for any time of day.",
+    "steps": [
+      "Rinse dal and rice.",
+      "Pressure cook with turmeric, salt and water.",
+      "Temper with ghee, cumin, ginger.",
+      "Mix and serve hot."
+    ],
+    "youtubeQuery": "moong dal khichdi recipe",
+    "tags": [
+      "vegetarian",
+      "healthy",
+      "comfort"
+    ],
+    "isVeg": true,
+    "calories": 220
+  },
+  {
+    "id": "aloo-gobi",
+    "name": "Aloo Gobi",
+    "nameHindi": "आलू गोभी",
+    "cuisine": [
+      "north-indian"
+    ],
+    "ingredients": [
+      {
+        "id": "potato",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "cauliflower",
+        "quantity": "1 small head"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium",
+        "optional": true
+      },
+      {
+        "id": "tomato",
+        "quantity": "1 medium",
+        "optional": true
+      },
+      {
+        "id": "garlic",
+        "quantity": "3 cloves",
+        "optional": true
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      }
+    ],
+    "time": 25,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80",
+    "description": "Dry spiced potato and cauliflower stir-fry - a North Indian classic.",
+    "steps": [
+      "Cut potato and cauliflower into florets.",
+      "Temper cumin in oil.",
+      "Add veggies and spices.",
+      "Cook covered until tender.",
+      "Serve with roti."
+    ],
+    "youtubeQuery": "aloo gobi recipe",
+    "tags": [
+      "vegetarian",
+      "lunch",
+      "dry"
+    ],
+    "isVeg": true,
+    "calories": 210
+  }
+]
