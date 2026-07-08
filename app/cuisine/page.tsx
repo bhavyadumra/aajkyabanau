@@ -25,10 +25,26 @@ const BTN = {
 export default function CuisinePage() {
   const selected = useAppStore((s) => s.selectedCuisines);
   const toggle = useAppStore((s) => s.toggleCuisine);
+  const clearSelections = useAppStore((s) => s.clearSelections);
   const language = useAppStore((s) => s.language);
   const tr = t[language];
 
-  const progress = (selected.length / cuisines.length) * 100;
+  // Exclusive selection: clicking a cuisine replaces any existing selection
+  const handleSelect = (id: string) => {
+    const isSelected = selected.includes(id);
+    // Clear all cuisines first
+    if (selected.length > 0) {
+      selected.forEach((c) => { if (c !== id) toggle(c); });
+    }
+    if (!isSelected) {
+      toggle(id);
+    } else {
+      // Clicking again deselects (show all)
+      toggle(id);
+    }
+  };
+
+  const progress = selected.length > 0 ? 100 : 0;
 
   return (
     <section className="space-y-6 pb-6">
@@ -47,6 +63,18 @@ export default function CuisinePage() {
         <p className="heading-display-italic text-lg" style={{ color: "#b07a9e" }}>
           {tr.cuisineSub}
         </p>
+        {selected.length > 0 && (
+          <p className="text-sm font-medium" style={{ color: "#e91e8c" }}>
+            Showing only: <strong>{selected[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</strong>
+            {" · "}
+            <button
+              onClick={() => { selected.forEach(c => toggle(c)); }}
+              style={{ textDecoration: "underline", background: "none", border: "none", cursor: "pointer", color: "#9c6b8a", fontSize: "inherit" }}
+            >
+              Show all cuisines
+            </button>
+          </p>
+        )}
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -58,12 +86,13 @@ export default function CuisinePage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.03 }}
-              onClick={() => toggle(c.id)}
+              onClick={() => handleSelect(c.id)}
               className="relative rounded-card overflow-hidden cursor-pointer group"
               style={{
                 border: isSelected ? "2px solid #e91e8c" : "2px solid transparent",
                 boxShadow: isSelected ? "0 0 0 3px rgba(233,30,140,0.15)" : "0 2px 12px rgba(0,0,0,0.08)",
                 transition: "all 0.2s",
+                opacity: selected.length > 0 && !isSelected ? 0.55 : 1,
               }}
             >
               <CuisineImage src={c.image} alt={c.name} emoji={c.emoji} />
@@ -91,15 +120,14 @@ export default function CuisinePage() {
             className="h-2 rounded-full"
             style={{ background: "linear-gradient(90deg,#ff6b9d,#e91e8c)" }}
             initial={{ width: 0 }}
-            animate={{ width: `${progress}%` }}
+            animate={{ width: selected.length > 0 ? "100%" : "0%" }}
             transition={{ type: "spring", stiffness: 80 }}
           />
         </div>
-        <span className="text-sm whitespace-nowrap" style={{ color: "#b07a9e" }}>
-          {tr.cuisineSelected(selected.length)}
-        </span>
         <Link href="/ingredients">
-          <button style={BTN}>{tr.cuisineNext}</button>
+          <button style={BTN}>
+            {selected.length > 0 ? tr.cuisineNext : "Skip →"}
+          </button>
         </Link>
       </div>
     </section>
