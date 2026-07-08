@@ -875,14 +875,38 @@
     "id": "sweet-lassi",
     "name": "Sweet Lassi",
     "nameHindi": "मीठी लस्सी",
-    "cuisine": ["snacks", "punjabi"],
+    "cuisine": [
+      "snacks",
+      "punjabi"
+    ],
     "ingredients": [
-      { "id": "curd", "quantity": "1 cup" },
-      { "id": "milk", "quantity": "1/2 cup" },
-      { "id": "sugar", "quantity": "3 tbsp" },
-      { "id": "cardamom", "quantity": "1/4 tsp", "optional": true },
-      { "id": "rose-water", "quantity": "1 tsp", "optional": true },
-      { "id": "saffron", "quantity": "a pinch", "optional": true }
+      {
+        "id": "curd",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "milk",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "sugar",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "cardamom",
+        "quantity": "1/4 tsp",
+        "optional": true
+      },
+      {
+        "id": "rose-water",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "saffron",
+        "quantity": "a pinch",
+        "optional": true
+      }
     ],
     "time": 5,
     "difficulty": "Easy",
@@ -895,7 +919,11 @@
       "Pour into tall glasses over ice and serve chilled."
     ],
     "youtubeQuery": "sweet lassi recipe Punjabi",
-    "tags": ["vegetarian", "drink", "quick"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "quick"
+    ],
     "isVeg": true,
     "calories": 150
   },
@@ -903,14 +931,37 @@
     "id": "mango-lassi",
     "name": "Mango Lassi",
     "nameHindi": "मैंगो लस्सी",
-    "cuisine": ["snacks", "punjabi"],
+    "cuisine": [
+      "snacks",
+      "punjabi"
+    ],
     "ingredients": [
-      { "id": "mango", "quantity": "1 large" },
-      { "id": "curd", "quantity": "1/2 cup" },
-      { "id": "milk", "quantity": "1/2 cup" },
-      { "id": "sugar", "quantity": "2 tbsp" },
-      { "id": "cardamom", "quantity": "1/4 tsp", "optional": true },
-      { "id": "saffron", "quantity": "a pinch", "optional": true }
+      {
+        "id": "mango",
+        "quantity": "1 large"
+      },
+      {
+        "id": "curd",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "milk",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "sugar",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "cardamom",
+        "quantity": "1/4 tsp",
+        "optional": true
+      },
+      {
+        "id": "saffron",
+        "quantity": "a pinch",
+        "optional": true
+      }
     ],
     "time": 5,
     "difficulty": "Easy",
@@ -923,7 +974,11 @@
       "Serve chilled, garnished with saffron strands."
     ],
     "youtubeQuery": "mango lassi recipe",
-    "tags": ["vegetarian", "drink", "quick"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "quick"
+    ],
     "isVeg": true,
     "calories": 180
   },
@@ -931,13 +986,34 @@
     "id": "nimbu-pani",
     "name": "Nimbu Pani",
     "nameHindi": "नींबू पानी",
-    "cuisine": ["snacks", "street-food"],
+    "cuisine": [
+      "snacks",
+      "street-food"
+    ],
     "ingredients": [
-      { "id": "lemon", "quantity": "2" },
-      { "id": "sugar", "quantity": "2-3 tbsp" },
-      { "id": "salt", "quantity": "a pinch", "optional": true },
-      { "id": "mint", "quantity": "few leaves", "optional": true },
-      { "id": "black-salt", "quantity": "1/4 tsp", "optional": true }
+      {
+        "id": "lemon",
+        "quantity": "2"
+      },
+      {
+        "id": "sugar",
+        "quantity": "2-3 tbsp"
+      },
+      {
+        "id": "salt",
+        "quantity": "a pinch",
+        "optional": true
+      },
+      {
+        "id": "mint",
+        "quantity": "few leaves",
+        "optional": true
+      },
+      {
+        "id": "black-salt",
+        "quantity": "1/4 tsp",
+        "optional": true
+      }
     ],
     "time": 5,
     "difficulty": "Easy",
@@ -950,7 +1026,11 @@
       "Add black salt and mint for the street-side touch."
     ],
     "youtubeQuery": "nimbu pani recipe",
-    "tags": ["vegetarian", "drink", "quick"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "quick"
+    ],
     "isVeg": true,
     "calories": 60
   },
@@ -958,16 +1038,50 @@
     "id": "masala-chaas",
     "name": "Masala Chaas",
     "nameHindi": "मसाला छाछ",
-    "cuisine": ["snacks", "gujarati"],
+    "cuisine": [
+      "snacks",
+      "gujarati"
+    ],
     "ingredients": [
-      { "id": "curd", "quantity": "1 cup" },
-      { "id": "ginger", "quantity": "1/2 inch", "optional": true },
-      { "id": "green-chilli", "quantity": "1/2", "optional": true },
-      { "id": "cumin", "quantity": "1/2 tsp", "optional": true },
-      { "id": "salt", "quantity": "to taste", "optional": true },
-      { "id": "mint", "quantity": "few leaves", "optional": true },
-      { "id": "coriander", "quantity": "few leaves", "optional": true },
-      { "id": "black-salt", "quantity": "a pinch", "optional": true }
+      {
+        "id": "curd",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch",
+        "optional": true
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "1/2",
+        "optional": true
+      },
+      {
+        "id": "cumin",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      },
+      {
+        "id": "mint",
+        "quantity": "few leaves",
+        "optional": true
+      },
+      {
+        "id": "coriander",
+        "quantity": "few leaves",
+        "optional": true
+      },
+      {
+        "id": "black-salt",
+        "quantity": "a pinch",
+        "optional": true
+      }
     ],
     "time": 5,
     "difficulty": "Easy",
@@ -980,7 +1094,11 @@
       "Pour over ice, garnish with mint and coriander, serve cold."
     ],
     "youtubeQuery": "masala chaas recipe",
-    "tags": ["vegetarian", "drink", "quick"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "quick"
+    ],
     "isVeg": true,
     "calories": 70
   },
@@ -988,14 +1106,39 @@
     "id": "haldi-doodh",
     "name": "Haldi Doodh",
     "nameHindi": "हल्दी दूध",
-    "cuisine": ["snacks", "healthy"],
+    "cuisine": [
+      "snacks",
+      "healthy"
+    ],
     "ingredients": [
-      { "id": "milk", "quantity": "1 cup" },
-      { "id": "turmeric", "quantity": "1/2 tsp" },
-      { "id": "honey", "quantity": "1 tsp", "optional": true },
-      { "id": "pepper", "quantity": "a pinch", "optional": true },
-      { "id": "ginger", "quantity": "small piece", "optional": true },
-      { "id": "cardamom", "quantity": "a pinch", "optional": true }
+      {
+        "id": "milk",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/2 tsp"
+      },
+      {
+        "id": "honey",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "pepper",
+        "quantity": "a pinch",
+        "optional": true
+      },
+      {
+        "id": "ginger",
+        "quantity": "small piece",
+        "optional": true
+      },
+      {
+        "id": "cardamom",
+        "quantity": "a pinch",
+        "optional": true
+      }
     ],
     "time": 5,
     "difficulty": "Easy",
@@ -1008,7 +1151,12 @@
       "Remove from heat, stir in honey and cardamom. Serve warm."
     ],
     "youtubeQuery": "haldi doodh golden milk recipe",
-    "tags": ["vegetarian", "drink", "quick", "healthy"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "quick",
+      "healthy"
+    ],
     "isVeg": true,
     "calories": 90
   },
@@ -1016,12 +1164,27 @@
     "id": "cold-coffee",
     "name": "Cold Coffee",
     "nameHindi": "कोल्ड कॉफी",
-    "cuisine": ["snacks"],
+    "cuisine": [
+      "snacks"
+    ],
     "ingredients": [
-      { "id": "milk", "quantity": "1 cup" },
-      { "id": "instant-coffee", "quantity": "2 tsp" },
-      { "id": "sugar", "quantity": "2 tbsp" },
-      { "id": "cream", "quantity": "2 tbsp", "optional": true }
+      {
+        "id": "milk",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "instant-coffee",
+        "quantity": "2 tsp"
+      },
+      {
+        "id": "sugar",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "cream",
+        "quantity": "2 tbsp",
+        "optional": true
+      }
     ],
     "time": 5,
     "difficulty": "Easy",
@@ -1034,7 +1197,11 @@
       "Blend until frothy. Serve immediately."
     ],
     "youtubeQuery": "cold coffee recipe Indian style",
-    "tags": ["vegetarian", "drink", "quick"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "quick"
+    ],
     "isVeg": true,
     "calories": 160
   },
@@ -1042,14 +1209,38 @@
     "id": "badam-milk",
     "name": "Badam Milk",
     "nameHindi": "बादाम दूध",
-    "cuisine": ["snacks", "healthy"],
+    "cuisine": [
+      "snacks",
+      "healthy"
+    ],
     "ingredients": [
-      { "id": "milk", "quantity": "1 cup" },
-      { "id": "almonds", "quantity": "10-12" },
-      { "id": "sugar", "quantity": "2 tbsp" },
-      { "id": "cardamom", "quantity": "2 pods", "optional": true },
-      { "id": "saffron", "quantity": "a pinch", "optional": true },
-      { "id": "rose-water", "quantity": "1/2 tsp", "optional": true }
+      {
+        "id": "milk",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "almonds",
+        "quantity": "10-12"
+      },
+      {
+        "id": "sugar",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "cardamom",
+        "quantity": "2 pods",
+        "optional": true
+      },
+      {
+        "id": "saffron",
+        "quantity": "a pinch",
+        "optional": true
+      },
+      {
+        "id": "rose-water",
+        "quantity": "1/2 tsp",
+        "optional": true
+      }
     ],
     "time": 10,
     "difficulty": "Easy",
@@ -1062,7 +1253,11 @@
       "Add saffron dissolved in warm milk. Serve hot or cold."
     ],
     "youtubeQuery": "badam milk recipe",
-    "tags": ["vegetarian", "drink", "healthy"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "healthy"
+    ],
     "isVeg": true,
     "calories": 210
   },
@@ -1070,12 +1265,27 @@
     "id": "rose-milk",
     "name": "Rose Milk",
     "nameHindi": "रोज़ मिल्क",
-    "cuisine": ["snacks"],
+    "cuisine": [
+      "snacks"
+    ],
     "ingredients": [
-      { "id": "milk", "quantity": "1 cup" },
-      { "id": "rose-water", "quantity": "2 tsp" },
-      { "id": "sugar", "quantity": "2 tbsp" },
-      { "id": "saffron", "quantity": "a pinch", "optional": true }
+      {
+        "id": "milk",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "rose-water",
+        "quantity": "2 tsp"
+      },
+      {
+        "id": "sugar",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "saffron",
+        "quantity": "a pinch",
+        "optional": true
+      }
     ],
     "time": 5,
     "difficulty": "Easy",
@@ -1088,7 +1298,11 @@
       "Serve over ice in a tall glass."
     ],
     "youtubeQuery": "rose milk recipe",
-    "tags": ["vegetarian", "drink", "quick"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "quick"
+    ],
     "isVeg": true,
     "calories": 120
   },
@@ -1096,17 +1310,53 @@
     "id": "thandai",
     "name": "Thandai",
     "nameHindi": "ठंडाई",
-    "cuisine": ["snacks", "north-indian", "rajasthani"],
+    "cuisine": [
+      "snacks",
+      "north-indian",
+      "rajasthani"
+    ],
     "ingredients": [
-      { "id": "milk", "quantity": "2 cups" },
-      { "id": "almonds", "quantity": "10" },
-      { "id": "sugar", "quantity": "3 tbsp" },
-      { "id": "fennel-seeds", "quantity": "1 tsp" },
-      { "id": "pepper", "quantity": "4-5", "optional": true },
-      { "id": "cardamom", "quantity": "3 pods", "optional": true },
-      { "id": "rose-water", "quantity": "1 tsp", "optional": true },
-      { "id": "cashew", "quantity": "8", "optional": true },
-      { "id": "saffron", "quantity": "a pinch", "optional": true }
+      {
+        "id": "milk",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "almonds",
+        "quantity": "10"
+      },
+      {
+        "id": "sugar",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "fennel-seeds",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "pepper",
+        "quantity": "4-5",
+        "optional": true
+      },
+      {
+        "id": "cardamom",
+        "quantity": "3 pods",
+        "optional": true
+      },
+      {
+        "id": "rose-water",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "cashew",
+        "quantity": "8",
+        "optional": true
+      },
+      {
+        "id": "saffron",
+        "quantity": "a pinch",
+        "optional": true
+      }
     ],
     "time": 15,
     "difficulty": "Easy",
@@ -1119,7 +1369,11 @@
       "Strain through a muslin cloth. Serve cold with ice."
     ],
     "youtubeQuery": "thandai recipe",
-    "tags": ["vegetarian", "drink", "festive"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "festive"
+    ],
     "isVeg": true,
     "calories": 230
   },
@@ -1127,14 +1381,38 @@
     "id": "aam-panna",
     "name": "Aam Panna",
     "nameHindi": "आम पन्ना",
-    "cuisine": ["snacks", "street-food"],
+    "cuisine": [
+      "snacks",
+      "street-food"
+    ],
     "ingredients": [
-      { "id": "raw-mango", "quantity": "1 large" },
-      { "id": "sugar", "quantity": "3 tbsp" },
-      { "id": "mint", "quantity": "handful" },
-      { "id": "cumin", "quantity": "1/2 tsp", "optional": true },
-      { "id": "black-salt", "quantity": "1/4 tsp", "optional": true },
-      { "id": "salt", "quantity": "to taste", "optional": true }
+      {
+        "id": "raw-mango",
+        "quantity": "1 large"
+      },
+      {
+        "id": "sugar",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "mint",
+        "quantity": "handful"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "black-salt",
+        "quantity": "1/4 tsp",
+        "optional": true
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      }
     ],
     "time": 20,
     "difficulty": "Easy",
@@ -1147,7 +1425,11 @@
       "Serve over ice with a mint sprig."
     ],
     "youtubeQuery": "aam panna recipe summer drink",
-    "tags": ["vegetarian", "drink", "summer"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "summer"
+    ],
     "isVeg": true,
     "calories": 80
   },
@@ -1155,14 +1437,38 @@
     "id": "jaljeera",
     "name": "Jaljeera",
     "nameHindi": "जलजीरा",
-    "cuisine": ["snacks", "street-food"],
+    "cuisine": [
+      "snacks",
+      "street-food"
+    ],
     "ingredients": [
-      { "id": "lemon", "quantity": "2" },
-      { "id": "cumin", "quantity": "1 tsp" },
-      { "id": "mint", "quantity": "handful" },
-      { "id": "black-salt", "quantity": "1/2 tsp", "optional": true },
-      { "id": "ginger", "quantity": "1/2 inch", "optional": true },
-      { "id": "coriander", "quantity": "few leaves", "optional": true }
+      {
+        "id": "lemon",
+        "quantity": "2"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "mint",
+        "quantity": "handful"
+      },
+      {
+        "id": "black-salt",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch",
+        "optional": true
+      },
+      {
+        "id": "coriander",
+        "quantity": "few leaves",
+        "optional": true
+      }
     ],
     "time": 10,
     "difficulty": "Easy",
@@ -1175,7 +1481,11 @@
       "Dilute with cold water, strain and serve over ice."
     ],
     "youtubeQuery": "jaljeera recipe",
-    "tags": ["vegetarian", "drink", "digestive"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "digestive"
+    ],
     "isVeg": true,
     "calories": 30
   },
@@ -1183,14 +1493,39 @@
     "id": "shikanji",
     "name": "Shikanji",
     "nameHindi": "शिकंजी",
-    "cuisine": ["snacks", "street-food", "north-indian"],
+    "cuisine": [
+      "snacks",
+      "street-food",
+      "north-indian"
+    ],
     "ingredients": [
-      { "id": "lemon", "quantity": "2" },
-      { "id": "sugar", "quantity": "3 tbsp" },
-      { "id": "ginger", "quantity": "1/2 inch" },
-      { "id": "cumin", "quantity": "1/2 tsp", "optional": true },
-      { "id": "black-salt", "quantity": "1/4 tsp", "optional": true },
-      { "id": "mint", "quantity": "few leaves", "optional": true }
+      {
+        "id": "lemon",
+        "quantity": "2"
+      },
+      {
+        "id": "sugar",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "black-salt",
+        "quantity": "1/4 tsp",
+        "optional": true
+      },
+      {
+        "id": "mint",
+        "quantity": "few leaves",
+        "optional": true
+      }
     ],
     "time": 5,
     "difficulty": "Easy",
@@ -1203,8 +1538,1821 @@
       "Add cold water and ice, stir well. Garnish with mint."
     ],
     "youtubeQuery": "shikanji recipe North Indian lemonade",
-    "tags": ["vegetarian", "drink", "quick"],
+    "tags": [
+      "vegetarian",
+      "drink",
+      "quick"
+    ],
     "isVeg": true,
     "calories": 65
+  },
+  {
+    "id": "butter-chicken",
+    "name": "Butter Chicken",
+    "nameHindi": "बटर चिकन",
+    "cuisine": [
+      "north-indian",
+      "mughlai",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "chicken",
+        "quantity": "500g"
+      },
+      {
+        "id": "tomato",
+        "quantity": "4 medium"
+      },
+      {
+        "id": "butter",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "cream",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "garlic",
+        "quantity": "5 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "cashew",
+        "quantity": "10",
+        "optional": true
+      },
+      {
+        "id": "curd",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp",
+        "optional": true
+      }
+    ],
+    "time": 50,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&q=80",
+    "description": "Velvety tomato-cream gravy hugging tender chicken — the dish that made Indian food famous worldwide.",
+    "steps": [
+      "Marinate chicken in curd and spices 30 min.",
+      "Blend tomato, garlic, ginger, cashew into sauce.",
+      "Cook sauce in butter, add chicken.",
+      "Finish with cream and simmer 10 min."
+    ],
+    "youtubeQuery": "butter chicken recipe restaurant style",
+    "tags": [
+      "non-veg",
+      "dinner"
+    ],
+    "isVeg": false,
+    "calories": 520
+  },
+  {
+    "id": "aloo-tikki",
+    "name": "Aloo Tikki",
+    "nameHindi": "आलू टिक्की",
+    "cuisine": [
+      "north-indian",
+      "street-food",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "potato",
+        "quantity": "4 medium"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2"
+      },
+      {
+        "id": "coriander",
+        "quantity": "handful"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      },
+      {
+        "id": "oil",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "besan",
+        "quantity": "2 tbsp",
+        "optional": true
+      }
+    ],
+    "time": 25,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&q=80",
+    "description": "Crispy spiced potato patties — North India's favourite street snack.",
+    "steps": [
+      "Boil and mash potatoes.",
+      "Mix with spices, chilli and coriander.",
+      "Shape into flat patties, coat with besan.",
+      "Shallow fry until golden and crispy on both sides."
+    ],
+    "youtubeQuery": "aloo tikki recipe",
+    "tags": [
+      "vegetarian",
+      "street-food",
+      "snack"
+    ],
+    "isVeg": true,
+    "calories": 210
+  },
+  {
+    "id": "matar-paneer",
+    "name": "Matar Paneer",
+    "nameHindi": "मटर पनीर",
+    "cuisine": [
+      "north-indian"
+    ],
+    "ingredients": [
+      {
+        "id": "paneer",
+        "quantity": "200g"
+      },
+      {
+        "id": "peas",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "tomato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "cream",
+        "quantity": "2 tbsp",
+        "optional": true
+      }
+    ],
+    "time": 35,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80",
+    "description": "Soft paneer and sweet green peas in a rich spiced tomato gravy.",
+    "steps": [
+      "Saute cumin, onion, ginger-garlic.",
+      "Add tomato and spices, cook until masala forms.",
+      "Add peas and paneer, simmer 10 min.",
+      "Finish with cream, garnish with coriander."
+    ],
+    "youtubeQuery": "matar paneer recipe",
+    "tags": [
+      "vegetarian",
+      "lunch"
+    ],
+    "isVeg": true,
+    "calories": 340
+  },
+  {
+    "id": "dal-makhani",
+    "name": "Dal Makhani",
+    "nameHindi": "दाल मखनी",
+    "cuisine": [
+      "north-indian",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "rajma",
+        "quantity": "1/4 cup"
+      },
+      {
+        "id": "tomato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "butter",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "cream",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp",
+        "optional": true
+      }
+    ],
+    "time": 60,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80",
+    "description": "Slow-cooked black lentils in buttery tomato gravy — a Punjabi restaurant classic.",
+    "steps": [
+      "Soak whole urad dal and rajma overnight, pressure cook.",
+      "Saute onion, ginger-garlic, tomato in butter.",
+      "Add cooked dal, simmer 30 min on low.",
+      "Finish with cream and butter."
+    ],
+    "youtubeQuery": "dal makhani restaurant style recipe",
+    "tags": [
+      "vegetarian",
+      "dinner"
+    ],
+    "isVeg": true,
+    "calories": 390
+  },
+  {
+    "id": "kadai-paneer",
+    "name": "Kadai Paneer",
+    "nameHindi": "कड़ाई पनीर",
+    "cuisine": [
+      "north-indian"
+    ],
+    "ingredients": [
+      {
+        "id": "paneer",
+        "quantity": "250g"
+      },
+      {
+        "id": "capsicum",
+        "quantity": "1 large"
+      },
+      {
+        "id": "tomato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "coriander",
+        "quantity": "handful",
+        "optional": true
+      }
+    ],
+    "time": 35,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",
+    "description": "Smoky paneer and capsicum cooked with aromatic kadai masala in a wok.",
+    "steps": [
+      "Dry roast coriander and red chilli, coarsely grind.",
+      "Saute onion, capsicum until slightly charred.",
+      "Add ginger-garlic, tomato and ground spices.",
+      "Add paneer, toss on high heat. Garnish with coriander."
+    ],
+    "youtubeQuery": "kadai paneer recipe",
+    "tags": [
+      "vegetarian",
+      "dinner"
+    ],
+    "isVeg": true,
+    "calories": 350
+  },
+  {
+    "id": "aloo-matar",
+    "name": "Aloo Matar",
+    "nameHindi": "आलू मटर",
+    "cuisine": [
+      "north-indian"
+    ],
+    "ingredients": [
+      {
+        "id": "potato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "peas",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "tomato",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "coriander",
+        "quantity": "handful",
+        "optional": true
+      }
+    ],
+    "time": 25,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80",
+    "description": "Simple, homely potato and pea curry — everyday comfort food at its finest.",
+    "steps": [
+      "Temper cumin in oil.",
+      "Add onion, cook till golden. Add tomato and spices.",
+      "Add potato cubes and peas.",
+      "Cook covered until potatoes are tender. Garnish."
+    ],
+    "youtubeQuery": "aloo matar recipe",
+    "tags": [
+      "vegetarian",
+      "lunch"
+    ],
+    "isVeg": true,
+    "calories": 230
+  },
+  {
+    "id": "baingan-bharta",
+    "name": "Baingan Bharta",
+    "nameHindi": "बैंगन भर्ता",
+    "cuisine": [
+      "north-indian",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "brinjal",
+        "quantity": "1 large"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2"
+      },
+      {
+        "id": "coriander",
+        "quantity": "handful",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1/2 tsp",
+        "optional": true
+      }
+    ],
+    "time": 40,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1569049155271-e6b7e4e0e030?w=600&q=80",
+    "description": "Smoky fire-roasted eggplant mash tempered with spiced onion-tomato masala.",
+    "steps": [
+      "Roast brinjal directly on flame until charred and soft.",
+      "Peel, discard skin and mash the pulp.",
+      "Saute onion, ginger-garlic, tomato and spices.",
+      "Fold in mashed brinjal. Garnish with coriander."
+    ],
+    "youtubeQuery": "baingan bharta recipe",
+    "tags": [
+      "vegetarian",
+      "lunch"
+    ],
+    "isVeg": true,
+    "calories": 180
+  },
+  {
+    "id": "sarson-da-saag",
+    "name": "Sarson Da Saag",
+    "nameHindi": "सरसों का साग",
+    "cuisine": [
+      "north-indian",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "spinach",
+        "quantity": "2 bunches"
+      },
+      {
+        "id": "fenugreek-leaves",
+        "quantity": "1 bunch"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2"
+      },
+      {
+        "id": "butter",
+        "quantity": "3 tbsp",
+        "optional": true
+      },
+      {
+        "id": "maida",
+        "quantity": "2 tbsp",
+        "optional": true
+      }
+    ],
+    "time": 45,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1574353492795-31e8b4a76ac1?w=600&q=80",
+    "description": "Slow-cooked Punjab mustard greens with a dollop of white butter — winter perfection.",
+    "steps": [
+      "Blanch mustard greens and spinach in salted water.",
+      "Blend coarsely, cook with maida to thicken.",
+      "Prepare tempering with onion, ginger-garlic, green chilli.",
+      "Mix tempering into saag. Top with makhan (butter)."
+    ],
+    "youtubeQuery": "sarson da saag recipe authentic",
+    "tags": [
+      "vegetarian",
+      "dinner",
+      "winter"
+    ],
+    "isVeg": true,
+    "calories": 280
+  },
+  {
+    "id": "pindi-chole",
+    "name": "Pindi Chole",
+    "nameHindi": "पिंडी छोले",
+    "cuisine": [
+      "north-indian",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "kabuli-chana",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "5 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "chana-masala",
+        "quantity": "2 tsp"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "bay-leaf",
+        "quantity": "2",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      }
+    ],
+    "time": 60,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1628294895950-9805252a6784?w=600&q=80",
+    "description": "Robust dry-style Rawalpindi chickpea curry with whole spices — deeply flavourful.",
+    "steps": [
+      "Soak and pressure cook chickpeas with bay leaf and salt.",
+      "Saute onion until dark brown.",
+      "Add ginger-garlic, tomato and masalas.",
+      "Add chickpeas, cook until gravy is thick and coats the chana."
+    ],
+    "youtubeQuery": "pindi chole recipe",
+    "tags": [
+      "vegetarian",
+      "lunch"
+    ],
+    "isVeg": true,
+    "calories": 360
+  },
+  {
+    "id": "gajar-ka-halwa",
+    "name": "Gajar Ka Halwa",
+    "nameHindi": "गाजर का हलवा",
+    "cuisine": [
+      "north-indian",
+      "punjabi",
+      "desserts"
+    ],
+    "ingredients": [
+      {
+        "id": "carrot",
+        "quantity": "500g"
+      },
+      {
+        "id": "milk",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "sugar",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "ghee",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "cashew",
+        "quantity": "10",
+        "optional": true
+      },
+      {
+        "id": "raisins",
+        "quantity": "1 tbsp",
+        "optional": true
+      },
+      {
+        "id": "cardamom",
+        "quantity": "4 pods",
+        "optional": true
+      }
+    ],
+    "time": 60,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1590159983013-d4fe3b0a5b3b?w=600&q=80",
+    "description": "Slow-cooked grated carrot pudding with khoya and nuts — the queen of Indian desserts.",
+    "steps": [
+      "Grate carrots. Cook in ghee on medium heat 5 min.",
+      "Add milk and simmer until fully absorbed.",
+      "Add sugar, cook until halwa leaves sides of pan.",
+      "Add cardamom and garnish with fried nuts."
+    ],
+    "youtubeQuery": "gajar ka halwa recipe",
+    "tags": [
+      "vegetarian",
+      "dessert",
+      "winter"
+    ],
+    "isVeg": true,
+    "calories": 420
+  },
+  {
+    "id": "samosa",
+    "name": "Samosa",
+    "nameHindi": "समोसा",
+    "cuisine": [
+      "north-indian",
+      "street-food"
+    ],
+    "ingredients": [
+      {
+        "id": "potato",
+        "quantity": "4 medium"
+      },
+      {
+        "id": "peas",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "maida",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "oil",
+        "quantity": "for frying"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2",
+        "optional": true
+      },
+      {
+        "id": "coriander",
+        "quantity": "handful",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      }
+    ],
+    "time": 60,
+    "difficulty": "Hard",
+    "image": "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=600&q=80",
+    "description": "Crispy golden pastry stuffed with spiced potato-pea filling — India's iconic snack.",
+    "steps": [
+      "Make stiff dough with maida, oil and water.",
+      "Prepare potato-pea filling with spices.",
+      "Roll, shape into cones, fill and seal samosas.",
+      "Deep fry on medium heat until golden and crispy."
+    ],
+    "youtubeQuery": "samosa recipe crispy",
+    "tags": [
+      "vegetarian",
+      "street-food",
+      "snack"
+    ],
+    "isVeg": true,
+    "calories": 310
+  },
+  {
+    "id": "mutton-curry",
+    "name": "Mutton Curry",
+    "nameHindi": "मटन करी",
+    "cuisine": [
+      "north-indian",
+      "mughlai"
+    ],
+    "ingredients": [
+      {
+        "id": "mutton",
+        "quantity": "500g"
+      },
+      {
+        "id": "onion",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "garlic",
+        "quantity": "6 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "2 inches"
+      },
+      {
+        "id": "curd",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1.5 tsp"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "oil",
+        "quantity": "3 tbsp",
+        "optional": true
+      }
+    ],
+    "time": 90,
+    "difficulty": "Hard",
+    "image": "https://images.unsplash.com/photo-1545247181-516773cae754?w=600&q=80",
+    "description": "Slow-cooked bone-in mutton in a deep, spicy onion-tomato gravy with aromatic spices.",
+    "steps": [
+      "Marinate mutton in curd and spices for 1 hour.",
+      "Brown onions deeply. Add ginger-garlic paste.",
+      "Add tomato and masala, cook until oil separates.",
+      "Add mutton and pressure cook 30 min. Finish on open flame."
+    ],
+    "youtubeQuery": "mutton curry recipe dhaba style",
+    "tags": [
+      "non-veg",
+      "dinner"
+    ],
+    "isVeg": false,
+    "calories": 480
+  },
+  {
+    "id": "paneer-tikka",
+    "name": "Paneer Tikka",
+    "nameHindi": "पनीर टिक्का",
+    "cuisine": [
+      "north-indian",
+      "punjabi"
+    ],
+    "ingredients": [
+      {
+        "id": "paneer",
+        "quantity": "250g"
+      },
+      {
+        "id": "curd",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "capsicum",
+        "quantity": "1"
+      },
+      {
+        "id": "onion",
+        "quantity": "1"
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1/2 tsp"
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "lemon",
+        "quantity": "1",
+        "optional": true
+      }
+    ],
+    "time": 30,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80",
+    "description": "Smoky, charred paneer and veggie skewers — the vegetarian equivalent of tandoori magic.",
+    "steps": [
+      "Mix curd with spices for marinade.",
+      "Cube paneer, capsicum and onion, coat in marinade.",
+      "Skewer and grill or cook in a hot pan.",
+      "Squeeze lemon and serve with mint chutney."
+    ],
+    "youtubeQuery": "paneer tikka recipe restaurant style",
+    "tags": [
+      "vegetarian",
+      "starter"
+    ],
+    "isVeg": true,
+    "calories": 280
+  },
+  {
+    "id": "dum-aloo",
+    "name": "Dum Aloo",
+    "nameHindi": "दम आलू",
+    "cuisine": [
+      "north-indian",
+      "kashmiri"
+    ],
+    "ingredients": [
+      {
+        "id": "potato",
+        "quantity": "500g small"
+      },
+      {
+        "id": "curd",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1 inch"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "2 tsp"
+      },
+      {
+        "id": "fennel-seeds",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      }
+    ],
+    "time": 45,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600&q=80",
+    "description": "Baby potatoes slow-cooked in a bold, aromatic yogurt-based gravy — a Kashmiri treasure.",
+    "steps": [
+      "Deep fry parboiled baby potatoes until golden.",
+      "Blend onion, tomato and spices into gravy.",
+      "Cook gravy until oil separates. Add fried potatoes.",
+      "Seal with lid (dum) and cook on low 15 min."
+    ],
+    "youtubeQuery": "dum aloo recipe Kashmiri",
+    "tags": [
+      "vegetarian",
+      "dinner"
+    ],
+    "isVeg": true,
+    "calories": 310
+  },
+  {
+    "id": "khichdi",
+    "name": "Dal Khichdi",
+    "nameHindi": "दाल खिचड़ी",
+    "cuisine": [
+      "north-indian",
+      "healthy"
+    ],
+    "ingredients": [
+      {
+        "id": "rice",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "toor-dal",
+        "quantity": "1/4 cup"
+      },
+      {
+        "id": "moong-dal",
+        "quantity": "1/4 cup"
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/4 tsp"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "ghee",
+        "quantity": "1 tbsp",
+        "optional": true
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch",
+        "optional": true
+      }
+    ],
+    "time": 25,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&q=80",
+    "description": "The Indian soul food — mixed dal and rice cooked into a nourishing one-pot meal.",
+    "steps": [
+      "Rinse rice and dals together.",
+      "Pressure cook with turmeric, salt and water (5 whistles).",
+      "Temper cumin and ginger in ghee.",
+      "Mix tempering into khichdi. Serve with ghee and pickle."
+    ],
+    "youtubeQuery": "dal khichdi recipe",
+    "tags": [
+      "vegetarian",
+      "healthy",
+      "comfort"
+    ],
+    "isVeg": true,
+    "calories": 280
+  },
+  {
+    "id": "idli",
+    "name": "Idli",
+    "nameHindi": "इडली",
+    "cuisine": [
+      "south-indian",
+      "breakfast"
+    ],
+    "ingredients": [
+      {
+        "id": "rice",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "urad-dal",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      }
+    ],
+    "time": 30,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&q=80",
+    "description": "Soft, pillowy steamed rice cakes — South India's most beloved and nutritious breakfast.",
+    "steps": [
+      "Soak rice and urad dal separately for 6 hours.",
+      "Grind into smooth batter, ferment overnight.",
+      "Season with salt, pour into idli moulds.",
+      "Steam for 10-12 minutes. Serve with sambar and chutney."
+    ],
+    "youtubeQuery": "soft idli recipe",
+    "tags": [
+      "vegetarian",
+      "breakfast"
+    ],
+    "isVeg": true,
+    "calories": 120
+  },
+  {
+    "id": "sambar",
+    "name": "Sambar",
+    "nameHindi": "सांभर",
+    "cuisine": [
+      "south-indian"
+    ],
+    "ingredients": [
+      {
+        "id": "toor-dal",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "tomato",
+        "quantity": "2"
+      },
+      {
+        "id": "tamarind",
+        "quantity": "small piece"
+      },
+      {
+        "id": "drumstick",
+        "quantity": "2"
+      },
+      {
+        "id": "mustard-seeds",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "curry-leaves",
+        "quantity": "10"
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "1 tsp",
+        "optional": true
+      }
+    ],
+    "time": 40,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1555126634-323283e090fa?w=600&q=80",
+    "description": "Tangy, spiced lentil-vegetable stew — the soul of South Indian cuisine.",
+    "steps": [
+      "Pressure cook toor dal with turmeric.",
+      "Boil tamarind water with vegetables 10 min.",
+      "Add cooked dal and sambar powder, simmer 15 min.",
+      "Finish with mustard-curry leaf tempering."
+    ],
+    "youtubeQuery": "sambar recipe hotel style",
+    "tags": [
+      "vegetarian",
+      "lunch"
+    ],
+    "isVeg": true,
+    "calories": 160
+  },
+  {
+    "id": "vada",
+    "name": "Medu Vada",
+    "nameHindi": "मेदु वड़ा",
+    "cuisine": [
+      "south-indian",
+      "breakfast"
+    ],
+    "ingredients": [
+      {
+        "id": "urad-dal",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch"
+      },
+      {
+        "id": "curry-leaves",
+        "quantity": "10"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2"
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      },
+      {
+        "id": "oil",
+        "quantity": "for frying",
+        "optional": true
+      }
+    ],
+    "time": 30,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&q=80",
+    "description": "Crispy, fluffy deep-fried lentil donuts with a spiced crust — served with sambar and chutney.",
+    "steps": [
+      "Soak urad dal 4 hours, grind into thick fluffy batter.",
+      "Add ginger, chilli, curry leaves and salt.",
+      "Shape into rings with a hole (like donuts).",
+      "Deep fry on medium heat until golden brown."
+    ],
+    "youtubeQuery": "medu vada recipe crispy",
+    "tags": [
+      "vegetarian",
+      "breakfast",
+      "snack"
+    ],
+    "isVeg": true,
+    "calories": 230
+  },
+  {
+    "id": "rava-upma",
+    "name": "Rava Upma",
+    "nameHindi": "रवा उपमा",
+    "cuisine": [
+      "south-indian",
+      "breakfast",
+      "maharashtrian"
+    ],
+    "ingredients": [
+      {
+        "id": "sooji",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "onion",
+        "quantity": "1 medium"
+      },
+      {
+        "id": "mustard-seeds",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "curry-leaves",
+        "quantity": "8-10"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch"
+      },
+      {
+        "id": "oil",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "peanuts",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "lemon",
+        "quantity": "1",
+        "optional": true
+      }
+    ],
+    "time": 20,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&q=80",
+    "description": "Savoury semolina porridge with curry leaves and mustard — quick and wholesome.",
+    "steps": [
+      "Dry roast rava until aromatic, set aside.",
+      "Temper mustard seeds, curry leaves, peanuts in oil.",
+      "Saute onion, ginger and chilli.",
+      "Add hot water and rava, stir quickly. Cook covered 5 min."
+    ],
+    "youtubeQuery": "rava upma recipe South Indian",
+    "tags": [
+      "vegetarian",
+      "breakfast",
+      "quick"
+    ],
+    "isVeg": true,
+    "calories": 220
+  },
+  {
+    "id": "coconut-chutney",
+    "name": "Coconut Chutney",
+    "nameHindi": "नारियल चटनी",
+    "cuisine": [
+      "south-indian"
+    ],
+    "ingredients": [
+      {
+        "id": "coconut",
+        "quantity": "1 cup grated"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch"
+      },
+      {
+        "id": "mustard-seeds",
+        "quantity": "1/2 tsp"
+      },
+      {
+        "id": "curry-leaves",
+        "quantity": "8"
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      },
+      {
+        "id": "lemon",
+        "quantity": "1/2",
+        "optional": true
+      }
+    ],
+    "time": 10,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80",
+    "description": "Creamy coconut chutney with ginger and a mustard-curry leaf tempering — the idli's best friend.",
+    "steps": [
+      "Blend coconut, green chilli, ginger with water into smooth paste.",
+      "Add salt and lemon juice, blend again.",
+      "Heat oil, splutter mustard seeds and curry leaves.",
+      "Pour tempering over chutney. Serve with idli/dosa."
+    ],
+    "youtubeQuery": "coconut chutney recipe South Indian",
+    "tags": [
+      "vegetarian",
+      "chutney",
+      "quick"
+    ],
+    "isVeg": true,
+    "calories": 80
+  },
+  {
+    "id": "dhokla",
+    "name": "Dhokla",
+    "nameHindi": "ढोकला",
+    "cuisine": [
+      "gujarati"
+    ],
+    "ingredients": [
+      {
+        "id": "besan",
+        "quantity": "1.5 cups"
+      },
+      {
+        "id": "curd",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "sugar",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "lemon",
+        "quantity": "1"
+      },
+      {
+        "id": "mustard-seeds",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "curry-leaves",
+        "quantity": "10"
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2",
+        "optional": true
+      },
+      {
+        "id": "coriander",
+        "quantity": "for garnish",
+        "optional": true
+      }
+    ],
+    "time": 30,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=600&q=80",
+    "description": "Light, spongy steamed gram flour cake with a sweet-sour tempering — Gujarat's pride.",
+    "steps": [
+      "Mix besan with curd, water, lemon juice and salt. Rest 20 min.",
+      "Add eno/baking soda, pour into greased plate.",
+      "Steam for 15 minutes. Cool and cut into squares.",
+      "Pour mustard-curry leaf tempering over dhokla."
+    ],
+    "youtubeQuery": "dhokla recipe instant",
+    "tags": [
+      "vegetarian",
+      "snack",
+      "breakfast"
+    ],
+    "isVeg": true,
+    "calories": 160
+  },
+  {
+    "id": "thepla",
+    "name": "Thepla",
+    "nameHindi": "थेपला",
+    "cuisine": [
+      "gujarati"
+    ],
+    "ingredients": [
+      {
+        "id": "atta",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "fenugreek-leaves",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "curd",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "turmeric",
+        "quantity": "1/4 tsp"
+      },
+      {
+        "id": "cumin",
+        "quantity": "1/2 tsp"
+      },
+      {
+        "id": "salt",
+        "quantity": "to taste",
+        "optional": true
+      },
+      {
+        "id": "oil",
+        "quantity": "2 tsp",
+        "optional": true
+      }
+    ],
+    "time": 30,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1717343807988-5ce1be3e7e6c?w=600&q=80",
+    "description": "Thin spiced flatbread with fresh fenugreek leaves — Gujarat's go-to travel snack.",
+    "steps": [
+      "Mix all ingredients into soft dough using water.",
+      "Roll into thin circles.",
+      "Cook on hot tawa with light oil on both sides.",
+      "Serve with pickle or curd."
+    ],
+    "youtubeQuery": "thepla recipe Gujarati",
+    "tags": [
+      "vegetarian",
+      "breakfast",
+      "snack"
+    ],
+    "isVeg": true,
+    "calories": 190
+  },
+  {
+    "id": "pav-bhaji",
+    "name": "Pav Bhaji",
+    "nameHindi": "पाव भाजी",
+    "cuisine": [
+      "maharashtrian",
+      "street-food"
+    ],
+    "ingredients": [
+      {
+        "id": "potato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "peas",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "cauliflower",
+        "quantity": "1/4 head"
+      },
+      {
+        "id": "tomato",
+        "quantity": "3 medium"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "butter",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "capsicum",
+        "quantity": "1",
+        "optional": true
+      },
+      {
+        "id": "garam-masala",
+        "quantity": "1 tsp",
+        "optional": true
+      },
+      {
+        "id": "lemon",
+        "quantity": "1",
+        "optional": true
+      }
+    ],
+    "time": 40,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&q=80",
+    "description": "Buttery spiced mixed vegetable mash served with toasted bread rolls — Mumbai's street icon.",
+    "steps": [
+      "Boil and mash all vegetables together.",
+      "Cook onion-tomato masala in butter.",
+      "Add mashed vegetables and pav bhaji masala.",
+      "Simmer until thick. Serve with butter-toasted pav."
+    ],
+    "youtubeQuery": "pav bhaji recipe Mumbai style",
+    "tags": [
+      "vegetarian",
+      "street-food"
+    ],
+    "isVeg": true,
+    "calories": 380
+  },
+  {
+    "id": "misal-pav",
+    "name": "Misal Pav",
+    "nameHindi": "मिसल पाव",
+    "cuisine": [
+      "maharashtrian",
+      "street-food"
+    ],
+    "ingredients": [
+      {
+        "id": "moong-whole",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "onion",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "tomato",
+        "quantity": "2 medium"
+      },
+      {
+        "id": "coconut",
+        "quantity": "1/4 cup"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "red-chilli",
+        "quantity": "2 tsp"
+      },
+      {
+        "id": "mustard-seeds",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "curry-leaves",
+        "quantity": "10",
+        "optional": true
+      }
+    ],
+    "time": 50,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80",
+    "description": "Spicy sprouted lentil curry topped with farsan — Maharashtra's spiciest and most iconic dish.",
+    "steps": [
+      "Sprout moong overnight. Pressure cook lightly.",
+      "Make masala with onion, tomato, coconut, garlic.",
+      "Cook sprouted moong in spicy masala.",
+      "Serve as usal topped with farsan, onion and lemon."
+    ],
+    "youtubeQuery": "misal pav recipe Pune",
+    "tags": [
+      "vegetarian",
+      "street-food",
+      "spicy"
+    ],
+    "isVeg": true,
+    "calories": 340
+  },
+  {
+    "id": "kheer",
+    "name": "Kheer",
+    "nameHindi": "खीर",
+    "cuisine": [
+      "north-indian",
+      "desserts"
+    ],
+    "ingredients": [
+      {
+        "id": "rice",
+        "quantity": "1/4 cup"
+      },
+      {
+        "id": "milk",
+        "quantity": "1 litre"
+      },
+      {
+        "id": "sugar",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "cardamom",
+        "quantity": "4 pods"
+      },
+      {
+        "id": "cashew",
+        "quantity": "10",
+        "optional": true
+      },
+      {
+        "id": "raisins",
+        "quantity": "1 tbsp",
+        "optional": true
+      },
+      {
+        "id": "saffron",
+        "quantity": "a pinch",
+        "optional": true
+      }
+    ],
+    "time": 50,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1590159983013-d4fe3b0a5b3b?w=600&q=80",
+    "description": "Slow-simmered creamy rice pudding with cardamom and saffron — India's timeless dessert.",
+    "steps": [
+      "Wash rice. Bring milk to boil in a heavy-bottomed pan.",
+      "Add rice, simmer on low stirring frequently for 40 min.",
+      "Add sugar, cardamom and saffron.",
+      "Garnish with nuts. Serve warm or chilled."
+    ],
+    "youtubeQuery": "kheer recipe Indian rice pudding",
+    "tags": [
+      "vegetarian",
+      "dessert",
+      "festive"
+    ],
+    "isVeg": true,
+    "calories": 340
+  },
+  {
+    "id": "gulab-jamun",
+    "name": "Gulab Jamun",
+    "nameHindi": "गुलाब जामुन",
+    "cuisine": [
+      "north-indian",
+      "desserts"
+    ],
+    "ingredients": [
+      {
+        "id": "khoya",
+        "quantity": "200g"
+      },
+      {
+        "id": "maida",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "sugar",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "cardamom",
+        "quantity": "4 pods"
+      },
+      {
+        "id": "rose-water",
+        "quantity": "1 tsp"
+      },
+      {
+        "id": "oil",
+        "quantity": "for frying",
+        "optional": true
+      },
+      {
+        "id": "saffron",
+        "quantity": "a pinch",
+        "optional": true
+      }
+    ],
+    "time": 45,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1605197788044-a4c4f75c7f2a?w=600&q=80",
+    "description": "Soft, melt-in-mouth milk dumplings soaked in fragrant rose-cardamom syrup.",
+    "steps": [
+      "Mix khoya with maida into soft dough. Shape into smooth balls.",
+      "Make sugar syrup with cardamom, rose water and saffron.",
+      "Deep fry gulab jamuns on very low heat until dark brown.",
+      "Soak in warm sugar syrup for 30 min."
+    ],
+    "youtubeQuery": "gulab jamun recipe with khoya",
+    "tags": [
+      "vegetarian",
+      "dessert",
+      "festive"
+    ],
+    "isVeg": true,
+    "calories": 380
+  },
+  {
+    "id": "jalebi",
+    "name": "Jalebi",
+    "nameHindi": "जलेबी",
+    "cuisine": [
+      "north-indian",
+      "street-food",
+      "desserts"
+    ],
+    "ingredients": [
+      {
+        "id": "maida",
+        "quantity": "1 cup"
+      },
+      {
+        "id": "curd",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "sugar",
+        "quantity": "1.5 cups"
+      },
+      {
+        "id": "saffron",
+        "quantity": "a pinch"
+      },
+      {
+        "id": "oil",
+        "quantity": "for frying",
+        "optional": true
+      },
+      {
+        "id": "cardamom",
+        "quantity": "4 pods",
+        "optional": true
+      },
+      {
+        "id": "lemon",
+        "quantity": "1/2",
+        "optional": true
+      }
+    ],
+    "time": 40,
+    "difficulty": "Hard",
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80",
+    "description": "Crispy orange swirls soaked in saffron syrup — India's most nostalgic sweet.",
+    "steps": [
+      "Make thin batter with maida, curd and water. Ferment 4 hours.",
+      "Prepare one-string sugar syrup with cardamom and saffron.",
+      "Pipe batter in spiral through a piped bag into hot oil.",
+      "Immediately transfer to syrup for 1 min. Serve hot."
+    ],
+    "youtubeQuery": "jalebi recipe crispy",
+    "tags": [
+      "vegetarian",
+      "dessert",
+      "street-food"
+    ],
+    "isVeg": true,
+    "calories": 290
+  },
+  {
+    "id": "veg-fried-rice",
+    "name": "Veg Fried Rice",
+    "nameHindi": "वेज फ्राइड राइस",
+    "cuisine": [
+      "chinese"
+    ],
+    "ingredients": [
+      {
+        "id": "rice",
+        "quantity": "2 cups"
+      },
+      {
+        "id": "carrot",
+        "quantity": "1"
+      },
+      {
+        "id": "beans",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "capsicum",
+        "quantity": "1"
+      },
+      {
+        "id": "garlic",
+        "quantity": "3 cloves"
+      },
+      {
+        "id": "soy-sauce",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "oil",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "eggs",
+        "quantity": "2",
+        "optional": true
+      },
+      {
+        "id": "pepper",
+        "quantity": "to taste",
+        "optional": true
+      }
+    ],
+    "time": 25,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80",
+    "description": "Wok-tossed rice with vegetables and soy sauce — Indo-Chinese comfort in minutes.",
+    "steps": [
+      "Cook and cool rice (day-old works best).",
+      "Saute garlic and vegetables on high heat.",
+      "Add rice and soy sauce, toss on high flame.",
+      "Season with pepper and salt."
+    ],
+    "youtubeQuery": "veg fried rice recipe Indian",
+    "tags": [
+      "vegetarian",
+      "lunch"
+    ],
+    "isVeg": true,
+    "calories": 350
+  },
+  {
+    "id": "veg-manchurian",
+    "name": "Veg Manchurian",
+    "nameHindi": "वेज मंचूरियन",
+    "cuisine": [
+      "chinese"
+    ],
+    "ingredients": [
+      {
+        "id": "cabbage",
+        "quantity": "1/2 cup"
+      },
+      {
+        "id": "carrot",
+        "quantity": "1"
+      },
+      {
+        "id": "beans",
+        "quantity": "1/4 cup"
+      },
+      {
+        "id": "besan",
+        "quantity": "3 tbsp"
+      },
+      {
+        "id": "garlic",
+        "quantity": "4 cloves"
+      },
+      {
+        "id": "ginger",
+        "quantity": "1/2 inch"
+      },
+      {
+        "id": "soy-sauce",
+        "quantity": "2 tbsp"
+      },
+      {
+        "id": "cornflour",
+        "quantity": "2 tbsp",
+        "optional": true
+      },
+      {
+        "id": "green-chilli",
+        "quantity": "2",
+        "optional": true
+      }
+    ],
+    "time": 35,
+    "difficulty": "Medium",
+    "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80",
+    "description": "Crispy vegetable balls in a sticky, garlicky Indo-Chinese sauce — a crowd favourite.",
+    "steps": [
+      "Mix grated veg with besan, cornflour and spices. Form balls.",
+      "Deep fry until golden and crispy.",
+      "Make sauce with garlic, ginger, soy sauce.",
+      "Toss fried balls in sauce. Serve with rice or noodles."
+    ],
+    "youtubeQuery": "veg manchurian recipe",
+    "tags": [
+      "vegetarian",
+      "starter"
+    ],
+    "isVeg": true,
+    "calories": 290
   }
 ]
