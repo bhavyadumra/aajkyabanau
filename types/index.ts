@@ -25,7 +25,8 @@ export type IngredientCategory =
   | 'Non-Veg'
   | 'Frozen'
   | 'Bakery & Snacks'
-  | 'Sweet Items';
+  | 'Sweet Items'
+  | 'Beverages';
 
 export interface RecipeIngredient {
   id: string;

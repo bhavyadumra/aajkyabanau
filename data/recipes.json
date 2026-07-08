@@ -870,5 +870,341 @@
     ],
     "isVeg": true,
     "calories": 210
+  },
+  {
+    "id": "sweet-lassi",
+    "name": "Sweet Lassi",
+    "nameHindi": "मीठी लस्सी",
+    "cuisine": ["snacks", "punjabi"],
+    "ingredients": [
+      { "id": "curd", "quantity": "1 cup" },
+      { "id": "milk", "quantity": "1/2 cup" },
+      { "id": "sugar", "quantity": "3 tbsp" },
+      { "id": "cardamom", "quantity": "1/4 tsp", "optional": true },
+      { "id": "rose-water", "quantity": "1 tsp", "optional": true },
+      { "id": "saffron", "quantity": "a pinch", "optional": true }
+    ],
+    "time": 5,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80",
+    "description": "Creamy, frothy chilled yogurt drink — Punjab's most beloved cooling refreshment.",
+    "steps": [
+      "Add curd, milk and sugar to a blender.",
+      "Blend on high for 1 minute until frothy.",
+      "Add cardamom and rose water if using.",
+      "Pour into tall glasses over ice and serve chilled."
+    ],
+    "youtubeQuery": "sweet lassi recipe Punjabi",
+    "tags": ["vegetarian", "drink", "quick"],
+    "isVeg": true,
+    "calories": 150
+  },
+  {
+    "id": "mango-lassi",
+    "name": "Mango Lassi",
+    "nameHindi": "मैंगो लस्सी",
+    "cuisine": ["snacks", "punjabi"],
+    "ingredients": [
+      { "id": "mango", "quantity": "1 large" },
+      { "id": "curd", "quantity": "1/2 cup" },
+      { "id": "milk", "quantity": "1/2 cup" },
+      { "id": "sugar", "quantity": "2 tbsp" },
+      { "id": "cardamom", "quantity": "1/4 tsp", "optional": true },
+      { "id": "saffron", "quantity": "a pinch", "optional": true }
+    ],
+    "time": 5,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1553361371-9b6e9f9e0c55?w=600&q=80",
+    "description": "Thick, golden mango lassi — sweet, tropical and utterly refreshing.",
+    "steps": [
+      "Peel and chop the mango, remove the seed.",
+      "Blend mango, curd, milk and sugar until silky smooth.",
+      "Add cardamom and blend briefly.",
+      "Serve chilled, garnished with saffron strands."
+    ],
+    "youtubeQuery": "mango lassi recipe",
+    "tags": ["vegetarian", "drink", "quick"],
+    "isVeg": true,
+    "calories": 180
+  },
+  {
+    "id": "nimbu-pani",
+    "name": "Nimbu Pani",
+    "nameHindi": "नींबू पानी",
+    "cuisine": ["snacks", "street-food"],
+    "ingredients": [
+      { "id": "lemon", "quantity": "2" },
+      { "id": "sugar", "quantity": "2-3 tbsp" },
+      { "id": "salt", "quantity": "a pinch", "optional": true },
+      { "id": "mint", "quantity": "few leaves", "optional": true },
+      { "id": "black-salt", "quantity": "1/4 tsp", "optional": true }
+    ],
+    "time": 5,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1527515637462-a18f16a06d77?w=600&q=80",
+    "description": "India's classic street-side lemonade — tangy, sweet and instantly cooling.",
+    "steps": [
+      "Squeeze lemon juice into a glass.",
+      "Add sugar and a pinch of salt, stir well.",
+      "Fill with cold water and ice cubes.",
+      "Add black salt and mint for the street-side touch."
+    ],
+    "youtubeQuery": "nimbu pani recipe",
+    "tags": ["vegetarian", "drink", "quick"],
+    "isVeg": true,
+    "calories": 60
+  },
+  {
+    "id": "masala-chaas",
+    "name": "Masala Chaas",
+    "nameHindi": "मसाला छाछ",
+    "cuisine": ["snacks", "gujarati"],
+    "ingredients": [
+      { "id": "curd", "quantity": "1 cup" },
+      { "id": "ginger", "quantity": "1/2 inch", "optional": true },
+      { "id": "green-chilli", "quantity": "1/2", "optional": true },
+      { "id": "cumin", "quantity": "1/2 tsp", "optional": true },
+      { "id": "salt", "quantity": "to taste", "optional": true },
+      { "id": "mint", "quantity": "few leaves", "optional": true },
+      { "id": "coriander", "quantity": "few leaves", "optional": true },
+      { "id": "black-salt", "quantity": "a pinch", "optional": true }
+    ],
+    "time": 5,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1559561853-08451507873b?w=600&q=80",
+    "description": "Spiced thin buttermilk — the perfect digestive after a heavy Indian meal.",
+    "steps": [
+      "Blend curd with water to thin consistency.",
+      "Add ginger, green chilli, cumin and blend again.",
+      "Season with salt and black salt.",
+      "Pour over ice, garnish with mint and coriander, serve cold."
+    ],
+    "youtubeQuery": "masala chaas recipe",
+    "tags": ["vegetarian", "drink", "quick"],
+    "isVeg": true,
+    "calories": 70
+  },
+  {
+    "id": "haldi-doodh",
+    "name": "Haldi Doodh",
+    "nameHindi": "हल्दी दूध",
+    "cuisine": ["snacks", "healthy"],
+    "ingredients": [
+      { "id": "milk", "quantity": "1 cup" },
+      { "id": "turmeric", "quantity": "1/2 tsp" },
+      { "id": "honey", "quantity": "1 tsp", "optional": true },
+      { "id": "pepper", "quantity": "a pinch", "optional": true },
+      { "id": "ginger", "quantity": "small piece", "optional": true },
+      { "id": "cardamom", "quantity": "a pinch", "optional": true }
+    ],
+    "time": 5,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80",
+    "description": "Golden turmeric milk — an ancient Ayurvedic remedy that warms you from within.",
+    "steps": [
+      "Heat milk in a saucepan on medium flame.",
+      "Whisk in turmeric, pepper and ginger.",
+      "Simmer for 3-4 minutes without boiling.",
+      "Remove from heat, stir in honey and cardamom. Serve warm."
+    ],
+    "youtubeQuery": "haldi doodh golden milk recipe",
+    "tags": ["vegetarian", "drink", "quick", "healthy"],
+    "isVeg": true,
+    "calories": 90
+  },
+  {
+    "id": "cold-coffee",
+    "name": "Cold Coffee",
+    "nameHindi": "कोल्ड कॉफी",
+    "cuisine": ["snacks"],
+    "ingredients": [
+      { "id": "milk", "quantity": "1 cup" },
+      { "id": "instant-coffee", "quantity": "2 tsp" },
+      { "id": "sugar", "quantity": "2 tbsp" },
+      { "id": "cream", "quantity": "2 tbsp", "optional": true }
+    ],
+    "time": 5,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80",
+    "description": "Thick, frothy blended cold coffee — a café favourite made right at home.",
+    "steps": [
+      "Dissolve instant coffee and sugar in 2 tbsp warm water.",
+      "Add cold milk, cream and ice cubes to a blender.",
+      "Pour in the coffee mixture.",
+      "Blend until frothy. Serve immediately."
+    ],
+    "youtubeQuery": "cold coffee recipe Indian style",
+    "tags": ["vegetarian", "drink", "quick"],
+    "isVeg": true,
+    "calories": 160
+  },
+  {
+    "id": "badam-milk",
+    "name": "Badam Milk",
+    "nameHindi": "बादाम दूध",
+    "cuisine": ["snacks", "healthy"],
+    "ingredients": [
+      { "id": "milk", "quantity": "1 cup" },
+      { "id": "almonds", "quantity": "10-12" },
+      { "id": "sugar", "quantity": "2 tbsp" },
+      { "id": "cardamom", "quantity": "2 pods", "optional": true },
+      { "id": "saffron", "quantity": "a pinch", "optional": true },
+      { "id": "rose-water", "quantity": "1/2 tsp", "optional": true }
+    ],
+    "time": 10,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=600&q=80",
+    "description": "Richly flavoured almond milk with saffron and cardamom — luxurious and nourishing.",
+    "steps": [
+      "Soak almonds in water for 30 min, peel and blend with 1/4 cup milk.",
+      "Warm remaining milk in a pan.",
+      "Add almond paste, sugar and cardamom, simmer 5 min.",
+      "Add saffron dissolved in warm milk. Serve hot or cold."
+    ],
+    "youtubeQuery": "badam milk recipe",
+    "tags": ["vegetarian", "drink", "healthy"],
+    "isVeg": true,
+    "calories": 210
+  },
+  {
+    "id": "rose-milk",
+    "name": "Rose Milk",
+    "nameHindi": "रोज़ मिल्क",
+    "cuisine": ["snacks"],
+    "ingredients": [
+      { "id": "milk", "quantity": "1 cup" },
+      { "id": "rose-water", "quantity": "2 tsp" },
+      { "id": "sugar", "quantity": "2 tbsp" },
+      { "id": "saffron", "quantity": "a pinch", "optional": true }
+    ],
+    "time": 5,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+    "description": "Delicate pink rose-flavoured milk — elegant, floral and refreshingly sweet.",
+    "steps": [
+      "Chill the milk thoroughly.",
+      "Mix in rose water and sugar, stir until dissolved.",
+      "Add a few strands of saffron for colour.",
+      "Serve over ice in a tall glass."
+    ],
+    "youtubeQuery": "rose milk recipe",
+    "tags": ["vegetarian", "drink", "quick"],
+    "isVeg": true,
+    "calories": 120
+  },
+  {
+    "id": "thandai",
+    "name": "Thandai",
+    "nameHindi": "ठंडाई",
+    "cuisine": ["snacks", "north-indian", "rajasthani"],
+    "ingredients": [
+      { "id": "milk", "quantity": "2 cups" },
+      { "id": "almonds", "quantity": "10" },
+      { "id": "sugar", "quantity": "3 tbsp" },
+      { "id": "fennel-seeds", "quantity": "1 tsp" },
+      { "id": "pepper", "quantity": "4-5", "optional": true },
+      { "id": "cardamom", "quantity": "3 pods", "optional": true },
+      { "id": "rose-water", "quantity": "1 tsp", "optional": true },
+      { "id": "cashew", "quantity": "8", "optional": true },
+      { "id": "saffron", "quantity": "a pinch", "optional": true }
+    ],
+    "time": 15,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1538489949601-cbf6869d4cdf?w=600&q=80",
+    "description": "Festive chilled spiced milk drink with nuts and aromatic spices — Holi's signature drink.",
+    "steps": [
+      "Soak almonds, cashews and fennel seeds for 2 hours.",
+      "Blend soaked ingredients with cardamom and pepper into a fine paste.",
+      "Add paste to chilled milk with sugar and rose water, stir well.",
+      "Strain through a muslin cloth. Serve cold with ice."
+    ],
+    "youtubeQuery": "thandai recipe",
+    "tags": ["vegetarian", "drink", "festive"],
+    "isVeg": true,
+    "calories": 230
+  },
+  {
+    "id": "aam-panna",
+    "name": "Aam Panna",
+    "nameHindi": "आम पन्ना",
+    "cuisine": ["snacks", "street-food"],
+    "ingredients": [
+      { "id": "raw-mango", "quantity": "1 large" },
+      { "id": "sugar", "quantity": "3 tbsp" },
+      { "id": "mint", "quantity": "handful" },
+      { "id": "cumin", "quantity": "1/2 tsp", "optional": true },
+      { "id": "black-salt", "quantity": "1/4 tsp", "optional": true },
+      { "id": "salt", "quantity": "to taste", "optional": true }
+    ],
+    "time": 20,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&q=80",
+    "description": "Tangy raw mango cooler with mint and spices — the ultimate Indian summer drink.",
+    "steps": [
+      "Boil or roast the raw mango until soft. Peel and extract pulp.",
+      "Blend pulp with mint, sugar, cumin and salts.",
+      "Dilute with cold water to taste.",
+      "Serve over ice with a mint sprig."
+    ],
+    "youtubeQuery": "aam panna recipe summer drink",
+    "tags": ["vegetarian", "drink", "summer"],
+    "isVeg": true,
+    "calories": 80
+  },
+  {
+    "id": "jaljeera",
+    "name": "Jaljeera",
+    "nameHindi": "जलजीरा",
+    "cuisine": ["snacks", "street-food"],
+    "ingredients": [
+      { "id": "lemon", "quantity": "2" },
+      { "id": "cumin", "quantity": "1 tsp" },
+      { "id": "mint", "quantity": "handful" },
+      { "id": "black-salt", "quantity": "1/2 tsp", "optional": true },
+      { "id": "ginger", "quantity": "1/2 inch", "optional": true },
+      { "id": "coriander", "quantity": "few leaves", "optional": true }
+    ],
+    "time": 10,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1622597467836-f3e7e9d52b36?w=600&q=80",
+    "description": "Zesty cumin-mint water with black salt — India's ultimate digestive cooler.",
+    "steps": [
+      "Dry roast cumin and grind coarsely.",
+      "Blend mint, coriander and ginger with a splash of water.",
+      "Mix lemon juice, cumin powder, mint paste and black salt.",
+      "Dilute with cold water, strain and serve over ice."
+    ],
+    "youtubeQuery": "jaljeera recipe",
+    "tags": ["vegetarian", "drink", "digestive"],
+    "isVeg": true,
+    "calories": 30
+  },
+  {
+    "id": "shikanji",
+    "name": "Shikanji",
+    "nameHindi": "शिकंजी",
+    "cuisine": ["snacks", "street-food", "north-indian"],
+    "ingredients": [
+      { "id": "lemon", "quantity": "2" },
+      { "id": "sugar", "quantity": "3 tbsp" },
+      { "id": "ginger", "quantity": "1/2 inch" },
+      { "id": "cumin", "quantity": "1/2 tsp", "optional": true },
+      { "id": "black-salt", "quantity": "1/4 tsp", "optional": true },
+      { "id": "mint", "quantity": "few leaves", "optional": true }
+    ],
+    "time": 5,
+    "difficulty": "Easy",
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80",
+    "description": "Classic North Indian spiced lemonade with ginger and cumin — tangy and energising.",
+    "steps": [
+      "Squeeze lemon juice into a glass.",
+      "Grate ginger and extract juice from it.",
+      "Mix lemon juice, ginger juice, sugar, cumin and black salt.",
+      "Add cold water and ice, stir well. Garnish with mint."
+    ],
+    "youtubeQuery": "shikanji recipe North Indian lemonade",
+    "tags": ["vegetarian", "drink", "quick"],
+    "isVeg": true,
+    "calories": 65
   }
 ]

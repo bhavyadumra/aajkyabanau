@@ -93,6 +93,9 @@ export const ingredients: Ingredient[] = [
   { id: 'kashmiri-mirch', name: 'Kashmiri Red Chilli', nameHindi: 'कश्मीरी मिर्च', category: 'Masalas & Spices', emoji: '🔴' },
   { id: 'chat-masala', name: 'Chat Masala', nameHindi: 'चाट मसाला', category: 'Masalas & Spices', emoji: '🌶️' },
   { id: 'sugar', name: 'Sugar', nameHindi: 'चीनी', category: 'Masalas & Spices', emoji: '🍬', common: true },
+  { id: 'saffron', name: 'Saffron/Kesar', nameHindi: 'केसर', category: 'Masalas & Spices', emoji: '🌸' },
+  { id: 'fennel-seeds', name: 'Fennel Seeds/Saunf', nameHindi: 'सौंफ', category: 'Masalas & Spices', emoji: '🌿' },
+  { id: 'black-salt', name: 'Black Salt/Kala Namak', nameHindi: 'काला नमक', category: 'Masalas & Spices', emoji: '🖤' },
 
   // Herbs
   { id: 'coriander', name: 'Coriander Leaves', nameHindi: 'धनिया', category: 'Herbs', emoji: '🌿', common: true },
@@ -141,6 +144,11 @@ export const ingredients: Ingredient[] = [
   { id: 'jaggery', name: 'Jaggery/Gud', nameHindi: 'गुड़', category: 'Sweet Items', emoji: '🟤' },
   { id: 'honey', name: 'Honey', nameHindi: 'शहद', category: 'Sweet Items', emoji: '🍯' },
   { id: 'rose-water', name: 'Rose Water', nameHindi: 'गुलाब जल', category: 'Sweet Items', emoji: '🌹' },
+
+  // Beverages
+  { id: 'tea-leaves', name: 'Tea Leaves/Chai Patti', nameHindi: 'चाय पत्ती', category: 'Beverages', emoji: '🍵', common: true },
+  { id: 'instant-coffee', name: 'Instant Coffee', nameHindi: 'कॉफी', category: 'Beverages', emoji: '☕' },
+  { id: 'cocoa-powder', name: 'Cocoa Powder', nameHindi: 'कोको पाउडर', category: 'Beverages', emoji: '🍫' },
 ];
 
 export const ingredientCategories = [
@@ -159,4 +167,5 @@ export const ingredientCategories = [
   'Frozen',
   'Bakery & Snacks',
   'Sweet Items',
+  'Beverages',
 ] as const;
